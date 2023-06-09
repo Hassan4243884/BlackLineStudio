@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags static wagtailimages_tags %}
+
+
+{% block content %}
+
+    <div class="inner-banner lozad" data-background-image="{% static 'img/banners/inner_banner.jpg' %}">
+        <div class="inner-banner__container">
+            <div class="inner-banner__cell inner-banner__cell_l">
+                <h1 class="inner-h-title">Blog</h1>
+            </div>
+
+            <div class="inner-banner__cell inner-banner__cell_r">
+                <a class="btn btn_medium btn_dark btn_bordered" href="#contact">Book an appointment</a>
+            </div>
+        </div>
+    </div>
+
+
+<div class="section bg-pattern _dark">
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="cell large-8 medium-7">
+                <div class="blog-post">
+                    {% if self.header_image %}
+                        <div class="text-center">
+                            <div class="blog-post__image image-bordered">
+                                {% if self.header_image.width < 736 %}
+                                    {% image self.header_image width-736 as post_image %}
+                                {% else %}
+                                    {% image self.header_image fill-736x380 as post_image %}
+                                {% endif %}
+                                <img src="" data-src="{{ post_image.url }}" class="lozad" alt="">
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    <h1 class="blog-post__title">{{ self.title }}</h1>
+
+                    <div class="blog-actions">
+                        {% if self.categories.all %}
+                        <span>Posted by {{ self.author }} in:</span>
+                        <span  class="action-icon">
+                            <svg id=" " class="action-icon__ico svg-ico svg-ico_calendar"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_price-tag"></use></svg>
+                            {% for cat in self.categories.all %}
+                                <a href="{% url 'blog:category' cat.category.slug %}">{{ cat.category.name }}</a>{% if not forloop.last %},&nbsp;{% endif %}
+                            {% endfor %}
+                        </span>
+                        {% endif %}
+                        {% if self.date %}
+                        <span>on</span>
+                        <time class="action-icon">
+                            <svg id=" " class="action-icon__ico svg-ico svg-ico_price-tag"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_calendar"></use></svg>
+                            {{ self.date|date:"F jS, Y" }}
+                        </time>
+                        {% endif %}
+                    </div>
+
+                    <div class="blog-post__body wysiwyg text-white">
+                        {{ self.body|richtext }}
+                    </div>
+                </div>
+            </div>
+
+            {%  include 'includes/blog_sidebar.html' %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+<ul class="h-menu">
+    {% for item in site.data.menu.list %}
+        <li class="h-menu__item {{ item.class }} {% if page.menu.id == item.id %} active{% endif %}">
+            <a href="{{ item.link }}" class="h-menu__link"><span class="h-menu__text">{{ item.title }}</span></a>
+
+            {% if item.sub %}
+
+                <ul class="sub-menu">
+
+                    {% for sub_item in item.sub %}
+
+                    <li class="sub-menu__item"><a href="{{ sub_item.link }}" class="sub-menu__link">{{ sub_item.title }}</a></li>
+
+                    {% endfor %}
+
+                </ul>
+
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

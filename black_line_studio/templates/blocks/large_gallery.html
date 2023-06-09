@@ -1,0 +1,27 @@
+{% load wagtailimages_tags static %}
+<section class="section gallery-wrapper bg-pattern _dark-800">
+    <h2 class="section__title">{{ self.header }}</h2>
+
+    <div class="slide-btn">
+        <div class="gallery js-inner-gallery">
+            {% for item in self.items %}
+                {% if item.video_link %}
+                <div class="gallery__slide gallery__play grayscale-wr">
+                    <a href="{{ item.video_link }}" class="glightbox">
+                        <svg id=" " class="gallery__ico svg-ico svg-ico_icon-play"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_icon-play"></use></svg>
+                        {% image item.image fill-360x360 as tmp_photo %}
+                        <img src="{% static 'img/placeholder1.png' %}" data-src="{{ tmp_photo.url }}" width="360" height="360" alt="" class="grayscale tns-lazy-img">
+                    </a>
+                </div>
+                {% else %}
+                    <div class="gallery__slide grayscale-wr">
+                        {% image item.image fill-360x360 as tmp_photo %}
+                        <a href="{{ item.image.file.url }}" class="glightbox">
+                            <img src="{{ site.app.url }}img/placeholder1.png" data-src="{{ tmp_photo.url }}" width="360" height="360" alt="" class="grayscale tns-lazy-img">
+                        </a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

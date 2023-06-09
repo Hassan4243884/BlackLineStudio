@@ -1,0 +1,6 @@
+{% load wagtailcore_tags %}
+{% with self.body as block %}
+    <div class="cell small-12 {{ block.additional_classes }}">
+        {% include_block block.body %}
+    </div>
+{% endwith %}

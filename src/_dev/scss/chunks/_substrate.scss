@@ -1,0 +1,25 @@
+.substrate {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &._yellow::after {
+    background: rgba(map-get($custom-palette, yellow), .8);
+  }
+}
+
+.index-1 {
+  position: relative;
+  z-index: 1;
+}
+
+
+

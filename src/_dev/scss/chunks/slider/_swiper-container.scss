@@ -1,0 +1,26 @@
+.swiper-container {
+  left: rem-calc(-30)
+}
+
+.swiper-pagination {
+  display: block;
+  position: relative;
+  margin-top: rem-calc(32);
+
+  @include breakpoint(mobile up) {
+    display: none;
+  }
+
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    @include ib;
+    margin: rem-calc(4);
+    border: 2px map-get($custom-palette, yellow) solid;
+    border-radius: 100px;
+
+    &.swiper-pagination-bullet-active {
+      background: map-get($custom-palette, yellow);
+    }
+  }
+}

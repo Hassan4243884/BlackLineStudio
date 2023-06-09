@@ -1,0 +1,24 @@
+{% load wagtailcore_tags %}
+{% with self.block.is_spoiler_present as is_spoiler_present %}
+{% if self.header %}
+    {% if page.slug != 'home' %}
+         <h2 class="section__title _left no-x-gutter">{{ self.header }}</h2>
+    {% else %}
+        <h1 class="section__title _left no-x-gutter">{{ self.header }}</h1>
+    {% endif %}
+{% endif %}
+
+<div class="wysiwyg text-white spoiler-container spoiler-container_for-mobile">
+    {% for block in self.content %}
+        {% if block.block_type == 'mobile_hidden_text' %}
+            <div class="spoiler-mobile hidden js-spoiler">
+                {% include_block block %}
+            </div>
+        {% else %}
+            {% include_block block %}
+        {% endif %}
+    {% endfor %}
+    {% if self.spoiler %}<p><a class="spoiler-btn">Read more</a></p>{% endif %}
+    {% if self.anchor %}<p><a  href="#{{ self.anchor }}" class="btn btn_bordered" >Read more</a></p>{% endif %}
+</div>
+{% endwith %}

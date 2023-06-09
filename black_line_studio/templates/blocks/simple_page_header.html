@@ -1,0 +1,15 @@
+<div class="inner-banner lozad" data-background-image="{{ self.background.file.url }}">
+    <div class="inner-banner__container">
+        <div class="inner-banner__cell inner-banner__cell_l">
+            <h1 class="inner-h-title">{{ self.header }}</h1>
+        </div>
+        {% if page.slug == 'body-jewelry' or page.slug == 'toronto-fashion-jewelry' or page.slug == 'toronto-tattoo-and-piercing-aftercare' or page.slug == 'retail' %}
+            <div class="inner-banner__cell inner-banner__cell_r" style="padding-right: 10px; display: block">
+                <a class="btn btn_medium btn_dark btn_bordered" href="https://www.theblumz.com" target="_blank">Shop Now</a>
+            </div>
+        {% endif %}
+        <div class="inner-banner__cell inner-banner__cell_r">
+            <a class="btn btn_medium btn_dark btn_bordered" href="#contact">{{ self.cta_text }}</a>
+        </div>
+    </div>
+</div>

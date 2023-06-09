@@ -1,0 +1,31 @@
+<div class="section _dark-800" {%  if self.id %}id="{{ self.id }}"{% endif %}>
+    {% if self.header %}
+        <h2 class="section__title _left" >{{ self.header }}</h2>
+    {% endif %}
+
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell large-24">
+                <div class="main-tabs">
+                    <div class="main-tabs__header">
+                        {% for tab in self.tabs %}
+                            <button data-tab="content-{{ forloop.counter }}" class="main-tabs__title js-tab-btn {% if forloop.first %}active{% endif %}">{{ tab.name }}</button>
+                        {% endfor %}
+                    </div>
+
+                    <div class="main-tabs__body">
+                        {% for tab in self.tabs %}
+                        <div class="main-tabs__section js-info-accorfion-section {% if forloop.first %}active{% endif %}" id="content-{{ forloop.counter }}">
+                            <h3 class="accordion-title js-accordion-btn">{{ tab.name }}</h3>
+
+                            <div class="main-tabs__container accordion__container">
+                                {{ tab.content }}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

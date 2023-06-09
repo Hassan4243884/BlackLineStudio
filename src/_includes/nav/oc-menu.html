@@ -1,0 +1,15 @@
+<ul class="oc-menu">
+    {% for item in site.data.menu.off-canvas %}
+        <li class="oc-menu__item {{ item.class }}">
+            <a href="{{ item.link }}" class="oc-menu__link {{ item.link_class }}"><span>{{ item.title }}</span></a>
+
+            {% if item.sub %}
+                <ul class="m-dropdown js-dropdown">
+                    {% for sub_item in item.sub %}
+                        <li class="m-dropdown__item"><a href="{{ sub_item.link }}" class="m-dropdown__link">{{ sub_item.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

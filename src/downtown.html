@@ -1,0 +1,88 @@
+---
+layout: base_team
+meta:
+    title: ""
+    description: ""
+menu:
+    id: "contact"
+
+top-title: 'Downtown'
+pre-footer: true
+---
+
+<div class="contact-info bg-pattern lozad" data-background-image="{{ site.app.url }}img/bg/customers_bg.jpg">
+    <div class="inner-banner inner-banner_team">
+        <div class="inner-banner__container">
+            <div class="inner-banner__cell inner-banner__cell_l">
+                <h1 class="inner-h-title">{% if page.top-title %}{{ page.top-title }}{% endif %}</h1>
+            </div>
+
+            <div class="inner-banner__cell inner-banner__cell_r">
+                <a class="btn btn_medium btn_dark btn_bordered" href="#contact">Book an appointment</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container index-1">
+        <div class="grid-x grid-padding-x text-white align-justify">
+            <div class="cell large-6 medium-6">
+                <div class="wysiwyg">
+                    <p>Black Line Studio, Downtown Toronto is the only Body Art Boutique in North America. It incorporates all the essentials of the art world under the same roof: Contemporary Art Gallery, High-End Custom Tattoo Studio, Distinctive Jewelry and we also provide the services of laser tattoo removal, carbon peel, and vitamin-infused drips.</p>
+                </div>
+
+                <div class="contacts contacts_bg-transparent">
+                    <div class="contacts__section">
+                        {% include mixins/svg-ico.html ico="placeholder" class="contacts__ico" %}
+
+                        <div class="contacts__text">
+                            <p>573 King St. West - Second Floor, <br>
+                                Toronto, Ontario, M5V 1M1</p>
+                        </div>
+                    </div>
+
+                    <div class="contacts__section">
+                        {% include mixins/svg-ico.html ico="envelope" class="contacts__ico" %}
+                        <div class="contacts__text"><a href="mailto:" class="contacts__link">Email Us</a></div>
+                    </div>
+
+                    <div class="contacts__section">
+                        {% include mixins/svg-ico.html ico="phone-call" class="contacts__ico" %}
+                        <div class="contacts__text"><a href="tel:416-850-8227" class="contacts__link">416-850-8227</a></div>
+                    </div>
+
+                    <div class="contacts__section">
+                        {% include mixins/svg-ico.html ico="clock" class="contacts__ico" %}
+
+                        <div class="contacts__text">
+                            <div class="work-time">
+                                <div class="work-time__row">
+                                    <span class="work-time__title">Mon - Wed: </span>
+                                    <span class="work-time__text">11AM - 8PM</span>
+                                </div>
+
+                                <div class="work-time__row">
+                                    <span class="work-time__title">Thur - Sat: </span>
+                                    <span class="work-time__text">11AM - 10PM</span>
+                                </div>
+
+                                <div class="work-time__row">
+                                    <span class="work-time__title">Sunday: </span>
+                                    <span class="work-time__text">12PM - 5PM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cell large-6 medium-6 text-center">
+                <div class="image-bordered"><img src="" data-src="{{ site.app.url }}img/downtown.jpg" class="lozad" alt=""></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact-map" data-address='[[43.644274, -79.399516]]'></div>
+
+
+

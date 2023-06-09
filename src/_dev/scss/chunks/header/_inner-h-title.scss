@@ -1,0 +1,11 @@
+.inner-h-title {
+  color: $white;
+  font-size: map-get($section-title-sizes, medium);
+  font-weight: 600;
+  line-height: 1;
+
+  @include breakpoint(medium up) {
+    margin-bottom: 0;
+    font-size: map-get($section-title-sizes, large);
+  }
+}

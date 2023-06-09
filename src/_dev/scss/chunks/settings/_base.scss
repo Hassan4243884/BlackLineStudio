@@ -1,0 +1,8 @@
+p {
+  //font-size: map-get($content-sizes, paragraph-mobile-size);
+  font-size: rem-calc(17);
+
+  @include breakpoint(mobile up) {
+    font-size: map-get($content-sizes, paragraph-size);
+  }
+}

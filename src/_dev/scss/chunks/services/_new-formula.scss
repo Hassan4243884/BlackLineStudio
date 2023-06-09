@@ -1,0 +1,11 @@
+.new-formula {
+  padding-top: map-get($grid-column-gutter, medium);
+
+  &__col {
+    padding-bottom: map-get($grid-column-gutter, medium);
+
+    &._hidden{
+      display: none;
+    }
+  }
+}

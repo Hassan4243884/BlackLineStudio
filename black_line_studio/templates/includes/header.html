@@ -1,0 +1,29 @@
+{% load static menu_tags %}
+<header class="header" id="header">
+    <div class="header__container">
+        <div class="header__row">
+            <div class="header__col header__logo">
+                <a href="/"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            </div>
+            {% main_menu max_levels=2 template="menus/header_menu.html" %}
+            <div class="header__col header__phone">
+                <div class="phone">
+                    <a href="tel:{% if se.top_phone.value %}{{ se.top_phone.value }}{% else %}647-347-9999{% endif %}" class="phone__body" onclick="gtag('event', 'Call', {'send_to': 'UA-61179955-1','event_category': 'Phone Lead','event_label': 'Header Phone - {% if se.top_phone.value %}{{ se.top_phone.value }}{% else %}647-347-9999{% endif %}'});">
+                        <svg id=" " class="phone__ico svg-ico svg-ico_phone-filled">
+                            <use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_phone-filled"></use>
+                        </svg>
+                        <span class="phone__title">Call Us:</span>
+                        <span class="phone__content">{% if se.top_phone.value %}{{ se.top_phone.value }}{% else %}647-347-9999{% endif %}</span>
+                    </a>
+                </div>
+            </div>
+            <div class="header__col header__mobile-nav">
+                <button class="btn hamburger off-canvas-open" onclick="gtag('event', 'Call', {'send_to': 'UA-61179955-1','event_category': 'Phone Lead','event_label': 'Header Phone - 647-347-9999'});">
+                    <svg id=" " class="hamburger__ico svg-ico svg-ico_menu-button">
+                        <use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_menu-button"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

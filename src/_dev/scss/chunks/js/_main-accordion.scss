@@ -1,0 +1,61 @@
+$el-x-gutter: rem-calc(25);
+$el-y-gutter: rem-calc(20);
+
+.main-accordion {
+
+  &__section {
+    margin-bottom: rem-calc(8);
+
+    &.active {
+      .main-accordion__title {
+        &::after {
+          content: '-';
+        }
+      }
+
+      .main-accordion__container {
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: $el-y-gutter rem-calc(42) $el-y-gutter $el-x-gutter;
+    background: map-get($custom-palette, blue_dark_800);
+    color: $white;
+    font-size: rem-calc(18);
+    font-weight: 600;
+    line-height: 1;
+    text-align: left;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::after {
+      content: '+';
+      position: absolute;
+      top: rem-calc(12);
+      right: rem-calc(12);
+      color: map-get($custom-palette, yellow);
+      font-size: rem-calc(32);
+      font-weight: 400;
+      line-height: 1;
+    }
+  }
+
+  &__container {
+    display: none;
+    padding: $el-y-gutter $el-x-gutter;
+    border: 1px $black solid;
+    background: map-get($custom-palette, blue_dark);
+    color: $white;
+    font-size: rem-calc(15);
+    font-weight: 400;
+    line-height: 1;
+  }
+}

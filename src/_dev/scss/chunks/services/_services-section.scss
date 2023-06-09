@@ -1,0 +1,49 @@
+.services-section {
+  display: block;
+  height: auto;
+  padding: rem-calc(40 20);
+  background: map-get($custom-palette, blue_dark);
+  text-align: center;
+
+  @include breakpoint(mobile up) {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+  }
+
+  &__title {
+    margin-bottom: rem-calc(16);
+    font-size: rem-calc(22);
+    font-weight: 500;
+  }
+
+  &__icon {
+    position: relative;
+    z-index: 1;
+    margin-bottom: rem-calc(10);
+  }
+
+  &__body {
+    p {
+      a {
+        color: map_get($custom-palette, yellow);
+
+        &:hover {
+          color: darken(map_get($custom-palette, yellow), 10%);
+        }
+
+        &:focus {
+          color: map_get($custom-palette, yellow);
+        }
+      }
+    }
+  }
+
+  &__footer {
+    position: relative;
+    z-index: 1;
+    margin-top: auto;
+  }
+}

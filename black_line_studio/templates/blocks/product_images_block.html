@@ -1,0 +1,24 @@
+{% load wagtailimages_tags static %}
+<div class="grid-x grid-padding-x new-formula text-center">
+
+    {% for product in get_visible %}
+    <div class="cell large-6 medium-6 new-formula__col js-new-formula">
+        {% image product fill-544x544 as product_image %}
+        <img src="{% static 'img/placeholder1.png' %}" data-src="{{ product_image.url }}" width="544" height="544" class="lozad" alt="">
+    </div>
+    {% endfor %}
+
+    {% for product in get_hidden %}
+    <div class="cell large-6 medium-6 new-formula__col js-new-formula hidden-inner-products _hidden">
+        {% image product fill-544x544 as product_image %}
+        <img src="" data-src="{{ product_image.url }}" class="lozad" alt="">
+    </div>
+    {% endfor %}
+
+    {% if get_hidden|length > 0 %}
+        <div class="cell large-12 medium-6">
+            <button class="btn btn_bordered btn_large js-show_more" data-target=".hidden-inner-products">More Products</button>
+        </div>
+    {% endif %}
+
+</div>

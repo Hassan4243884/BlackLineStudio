@@ -1,0 +1,78 @@
+don-mills: [
+{
+photo: 'team_anna.jpg',
+name: 'ANIA',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+{
+photo: 'team_federica1.jpg',
+name: 'FEDERICA',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+{
+photo: 'team_bill1.jpg',
+name: 'BILL',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+{
+photo: 'team_anna.jpg',
+name: 'ANIA',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+{
+photo: 'team_federica1.jpg',
+name: 'FEDERICA',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+{
+photo: 'team_bill1.jpg',
+name: 'BILL',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+]
+
+king-west: [
+{
+photo: 'team_lorena.jpg',
+name: 'LORENA',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+{
+photo: 'team_mark.jpg',
+name: 'FEDERICA',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+{
+photo: 'team_bill.jpg',
+name: 'BILL',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+{
+photo: 'team_lorena.jpg',
+name: 'LORENA',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+{
+photo: 'team_mark.jpg',
+name: 'FEDERICA',
+post: 'tattoo master',
+link: 'team-inner.html'
+},
+{
+photo: 'team_bill.jpg',
+name: 'BILL',
+post: 'tattoo master',
+link: 'team-inner.html'
+}
+]
+

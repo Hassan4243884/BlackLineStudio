@@ -1,0 +1,10 @@
+{% load menu_tags %}
+<section class="section h-services _medium bg-pattern _bg-center-bottom-9 _dark-800 lozad" data-background-image="{% if self.background %}{{ self.background.file.url }}{% endif %}">
+    <h2 class="section__title _gold _full">{{ self.header }}</h2>
+
+    <div class="slide-btn">
+        <div class="services-carousel js-icons-animate">
+            {% flat_menu 'services' template='menus/services_menu.html' %}
+        </div>
+    </div>
+</section>

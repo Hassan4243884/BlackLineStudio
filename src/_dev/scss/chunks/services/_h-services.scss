@@ -1,0 +1,15 @@
+.h-services {
+  position: relative;
+  padding-bottom: map-get($section-gutters, large) !important;
+
+  .tns-nav {
+    //display: none;
+    bottom: rem-calc(-30);
+  }
+
+  //.tns-controls {
+  //  @include breakpoint(mobile down) {
+  //    display: none;
+  //  }
+  //}
+}

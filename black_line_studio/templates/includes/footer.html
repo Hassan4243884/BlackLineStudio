@@ -1,0 +1,70 @@
+{% load static menu_tags %}
+<footer class="section _small footer">
+    <div class="grid-container">
+        <div class="grid-x footer__row">
+            <div class="cell shrink footer__logo"><img src="/" data-src="{% static 'img/footer_logo.png' %}" class="lozad" alt=""></div>
+
+            <div class="cell auto footer__info">
+                <div class="grid-container">
+                    <div class="grid-x align-middle">
+                        <div class="cell medium-shrink">
+                            <div class="footer-socials">
+                                <h3 class="footer__title">See our work on:</h3>
+
+                                <ul class="socials">
+                                    {% if se.facebook %}
+                                    <li class="socials__item">
+                                        <a href="{{ se.facebook.value }}" rel="noreferrer" class="socials__link _fb" target="_blank"><svg id=" " class="socials__ico svg-ico svg-ico_facebook-f"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_facebook-f"></use></svg></a>
+                                    </li>
+                                    {% endif %}
+
+                                    {% if se.instagram %}
+                                    <li class="socials__item">
+                                        <a href="{{ se.instagram.value }}" rel="noreferrer" class="socials__link _inst" target="_blank"><svg id=" " class="socials__ico svg-ico svg-ico_instagram-filled"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_instagram-filled"></use></svg></a>
+                                    </li>
+                                    {% endif %}
+                                    {% if se.twitter %}
+                                    <li class="socials__item">
+                                        <a href="{{ se.twitter.value }}" rel="noreferrer" class="socials__link _tw" target="_blank"><svg id=" " class="socials__ico svg-ico svg-ico_twitter-filled"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_twitter-filled"></use></svg></a>
+                                    </li>
+                                    {% endif %}
+                                    {% if se.pinterest %}
+                                    <li class="socials__item">
+                                        <a href="{{ se.pinterest.value }}" rel="noreferrer" class="socials__link _pint" target="_blank"><svg id=" " class="socials__ico svg-ico svg-ico_pinterest"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_pinterest"></use></svg></a>
+                                    </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cell medium-auto">
+                            {% flat_menu 'footer_menu' template='menus/footer_menu.html' %}
+                        </div>
+                    </div>
+
+                    <h3 class="footer__title">Areas we service:</h3>
+                    <p>{{ se.areas_we_serve.value }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container footer__btm">
+        <div class="grid-x grid-padding-x">
+            <div class="cell large-6 medium-8 small-12">
+                {{ se.copy.value|safe }}
+            </div>
+
+            <div class="cell large-6 medium-4 small-12 medium-text-right">
+                {% if page.slug == 'home' %}
+                <p>Designed and developed by <a href="https://onecoremedia.com/" target="_blank"><img src="" data-src="{% static '/img/onecore_logo.png' %}" class="lozad" alt=""><span>OneCore Media</span></a>,
+                    SEO by <a href="https://www.seologist.com/" target="_blank">SeoLogist</a></p>
+                {% else %}
+                <p>Designed and developed by <img src="" data-src="{% static 'img/onecore_logo.png' %}" class="lozad" alt=""><span>OneCore Media</span>,
+                    SEO by <span>SeoLogist</span></p>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</footer>

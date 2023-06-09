@@ -1,0 +1,44 @@
+{% load wagtailimages_tags static %}
+<section class="section bg-pattern _dark">
+    <h2 class="section__title">{{ self.header }}</h2>
+
+    <div class="grid-container">
+        <div class="grid-x align-center">
+            <div class="cell large-5 text-center text-white wysiwyg">
+                {{ self.short_description }}
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container text-center">
+        <div class="grid-x grid-margin-x body-piercing">
+            {% for page in get_visible %}
+            <div class="cell large-3 medium-4 small-6 body-piercing__col inline-hover">
+                {% image page.image fill-256x195 as page_image  %}
+                <a href="{{ page.page.get_url }}" class="body-piercing__img">
+                    <img src="{% static 'img/placeholder1.png' %}" data-src="{{ page_image.url }}" width="256" height="195" class="lozad" alt="">
+                </a>
+
+                <a href="#" class="body-piercing__link">
+                    <span class="body-piercing__title">{{ page.name }}</span>
+                </a>
+            </div>
+            {% endfor %}
+            {% for page in get_hidden %}
+            <div class="cell large-3 medium-4 small-6 body-piercing__col inline-hover hidden-inner-pages _hidden">
+                {% image page.image fill-256x195 as page_image  %}
+                <a href="{{ page.page.get_url }}" class="body-piercing__img">
+                    <img src="" data-src="{{ page_image.url }}" class="lozad" alt="">
+                </a>
+
+                <a href="#" class="body-piercing__link">
+                    <span class="body-piercing__title">{{ page.name }}</span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        {% if get_hidden|length > 0 %}
+            <button class="btn btn_bordered js-show_more" data-target=".hidden-inner-pages">See More</button>
+        {% endif %}
+    </div>
+</section>

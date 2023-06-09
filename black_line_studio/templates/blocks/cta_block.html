@@ -1,0 +1,25 @@
+{% load static %}
+<section class="section h-actions bg-pattern _bg-center substrate _yellow lozad"
+         data-background-image="{% static 'img/bg/h_actions.jpg' %}">
+    <h2 class="section__title _white-ico index-1">{{ self.header }}</h2>
+
+    <div class="grid-container index-1">
+        <div class="grid-x grid-margin-x">
+            <div class="cell text-center">
+                <a class="btn btn_icon btn_dark h-actions__btn" href="#contact">
+                    <svg id=" " class="btn__ico svg-ico svg-ico_speech-bubble">
+                        <use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_speech-bubble"></use>
+                    </svg>
+                    <span>{{ self.form_cta_text }}</span>
+                </a>
+
+                <a href="tel:{{ self.phone_cta_number }}" class="icm_ct_link btn btn_icon btn_dark h-actions__btn" onclick="gtag('event', 'Call', {'send_to': 'UA-61179955-1','event_category': 'Phone Lead','event_label': 'Banner Phone - {{ self.phone_cta_number }}'});">
+                    <svg id=" " class="btn__ico svg-ico svg-ico_phone">
+                        <use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_phone"></use>
+                    </svg>
+                    <span>{{ self.phone_cta_text }} <span class="h-actions__phone">{{ self.phone_cta_number }}</span></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

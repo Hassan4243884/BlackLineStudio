@@ -1,0 +1,81 @@
+$base-url: '/';
+//$base-url: '/show/black-line-studio/';
+@if (compass-env( ) == 'production') {
+  $base-url: '/static/';
+}
+
+$hash: '0.01';
+$img-url: $base-url + 'img/';
+$fonts-url: $base-url + 'fonts/';
+$sprite: $img-url + 'sprite.png?v=' + $hash;
+
+$custom-palette: (
+   yellow_100: #d5ccb7,
+   yellow_400: #dcda1c,
+   yellow: #a39164,
+   gray_500: #858688,
+   gray_700: #484a4d,
+   blue_dark-700: #22262c,
+   blue_dark: #1a1d21,
+   blue_dark_800: #0d0f11,
+   error: #ff3333,
+);
+
+$social-palette: (
+   fb: #3b5999,
+   inst: #e4405f,
+   tw: #55acee,
+   pint: #bd081c,
+);
+
+$section-gutters: (
+  extra-small: rem-calc(12),
+  small: rem-calc(20),
+  medium: rem-calc(30),
+  large: rem-calc(40),
+);
+
+$section-indents: (
+  small: rem-calc(14),
+  medium: rem-calc(25),
+  large: rem-calc(40),
+);
+
+$btn-gutters: (
+  small: rem-calc(10),
+  medium: rem-calc(15),
+  large: rem-calc(18),
+);
+
+$section-title-sizes: (
+  extra-small: rem-calc(14),
+  small: rem-calc(18),
+  medium: rem-calc(24),
+  large: rem-calc(32),
+  xlarge: rem-calc(42),
+);
+
+$content-sizes: (
+  btn-size: rem-calc(14),
+  btn-form-size: rem-calc(18),
+  paragraph-size: rem-calc(15),
+  paragraph-mobile-size: rem-calc(14),
+);
+
+$slide-buttons-indent: rem-calc(55);
+$btn-radius: 30px;
+$btn-full-radius: 35px;
+
+$common-transition: .5s;
+
+.lozad {
+  min-height: 1px;
+  //border: 1px transparent solid;
+}
+
+
+
+
+
+
+

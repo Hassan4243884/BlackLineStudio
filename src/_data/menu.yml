@@ -1,0 +1,58 @@
+list: [
+      {id: 'home', link: '/', title: 'Home'},
+      {id: 'services', class: 'dropdown', link: 'services.html', title: 'Services', sub: [
+        {id: 'services', link: 'custom-tattoos.html', title: 'Custom Tattoos'},
+        {id: 'services', link: 'body-piercings.html', title: 'Piercings'},
+        {id: 'services', link: 'tattoo-cover-ups.html', title: 'Tattoo Cover-Ups'},
+        {id: 'services', link: 'laser-tattoo-removal.html', title: 'Tattoo Removal'},
+        {id: 'services', link: 'airbrushed-tattoos.html', title: 'Airbrushed Tattoos'},
+        {id: 'services', link: 'body-art.html', title: 'Body Art'},
+        {id: 'services', link: 'hollywood-face-peel.html', title: '“Hollywood” Carbon Peel'},
+        {id: 'services', link: 'acne-scar-removal.html', title: 'Acne Scar Removal'},
+        {id: 'services', link: 'reviv-vitamin-drip.html', title: 'REVIV Vitamin Drip'},
+      ]},
+      {id: 'team', link: 'team.html', title: 'Team'},
+      {id: 'retail', class: 'dropdown', link: 'retail.html', title: 'Retail', sub: [
+         {id: 'retail', link: 'body-jewelry.html', title: 'Body Jewelry'},
+         {id: 'retail', link: 'fashion-jewelry.html', title: 'Fashion Jewelry'},
+         {id: 'retail', link: 'environ-skin.html', title: 'Environ Skin Care'},
+         {id: 'retail', link: 'toronto-paintings.html', title: 'Art Gallery'},
+         {id: 'retail', link: 'aftercare.html', title: 'Aftercare'},
+      ]},
+      {id: 'blog', link: 'blog.html', title: 'Blog'},
+      {id: 'contact', class: 'dropdown', link: 'contact.html', title: 'Contact', sub: [
+         {id: 'contact', link: 'downtown.html', title: 'Downtown'},
+         {id: 'contact', link: 'uptown.html', title: 'Uptown'},
+      ]},
+      ]
+
+off-canvas: [
+            {id: 'home', link: '/', title: 'Home'},
+            {id: 'services', class: 'dropdown', link_class: 'js-trigger-dropdown', link: '', title: 'Services', sub: [
+              {id: 'services', link: 'custom-tattoos.html', title: 'Custom Tattoos'},
+              {id: 'services', link: 'body-piercings.html', title: 'Piercings'},
+              {id: 'services', link: 'tattoo-cover-ups.html', title: 'Tattoo Cover-Ups'},
+              {id: 'services', link: 'laser-tattoo-removal.html', title: 'Tattoo Removal'},
+              {id: 'services', link: 'airbrushed-tattoos.html', title: 'Airbrushed Tattoos'},
+              {id: 'services', link: 'body-art.html', title: 'Body Art'},
+              {id: 'services', link: 'hollywood-face-peel.html', title: '“Hollywood” Carbon Peel'},
+              {id: 'services', link: 'acne-scar-removal.html', title: 'Acne Scar Removal'},
+              {id: 'services', link: 'reviv-vitamin-drip.html', title: 'REVIV Vitamin Drip'},
+            ]},
+            {id: 'team', link: 'team.html', title: 'Team'},
+            {id: 'retail', class: 'dropdown', link_class: 'js-trigger-dropdown', link: '', title: 'Retail', sub: [
+               {id: 'retail', link: 'body-jewelry.html', title: 'Body Jewelry'},
+               {id: 'retail', link: 'fashion-jewelry.html', title: 'Fashion Jewelry'},
+               {id: 'retail', link: 'environ-skin.html', title: 'Environ Skin Care'},
+               {id: 'retail', link: 'toronto-paintings.html', title: 'Art Gallery'},
+               {id: 'retail', link: 'aftercare.html', title: 'Aftercare'},
+            ]},
+            {id: 'blog', link: 'blog.html', title: 'Blog'},
+            {id: 'contact', class: 'dropdown', link_class: 'js-trigger-dropdown', link: '', title: 'Contact', sub: [
+               {id: 'contact', link: 'downtown.html', title: 'Downtown'},
+               {id: 'contact', link: 'uptown.html', title: 'Uptown'},
+            ]},
+            ]
+
+
+

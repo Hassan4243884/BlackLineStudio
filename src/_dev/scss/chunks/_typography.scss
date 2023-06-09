@@ -1,0 +1,83 @@
+.wysiwyg {
+  text-align: center;
+
+  @include breakpoint(mobile up) {
+    text-align: left;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+  }
+
+  h1 {
+    font-size: map-get($section-title-sizes, xlarge);
+  }
+
+  h2 {
+    font-size: map-get($section-title-sizes, large);
+  }
+
+  h3 {
+    font-size: map-get($section-title-sizes, medium);
+  }
+
+  h4 {
+    font-size: map-get($section-title-sizes, small);
+  }
+
+  h5 {
+    font-size: map-get($section-title-sizes, extra-small);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+
+    li {
+      position: relative;
+      padding-bottom: rem-calc(16);
+      padding-left: rem-calc(26);
+      font-family: $secondary-font-family;
+      font-size: rem-calc(17);
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: rem-calc(6);
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border-radius: 1000px;
+        background: map-get($custom-palette, yellow);
+      }
+    }
+
+    a {
+      color: $white;
+      font-weight: 600;
+    }
+  }
+
+  p {
+    font-family: $secondary-font-family;
+    font-size: rem-calc(17);
+
+    strong {
+      font-weight: 700;
+    }
+
+    a {
+      color: map-get($custom-palette, yellow);
+      font-weight: 500;
+    }
+  }
+}
+
+.text-white {
+  color: $white;
+}
+
+
+

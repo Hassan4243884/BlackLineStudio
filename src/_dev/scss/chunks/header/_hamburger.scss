@@ -1,0 +1,14 @@
+.hamburger {
+  //width: auto;
+  margin-bottom: 0 !important;
+  min-width: 10px !important;
+  padding-top: rem-calc(15) !important;
+  padding-bottom: rem-calc(15) !important;
+
+  &__ico {
+    width: 25px;
+    height: 25px;
+    margin-top: rem-calc(4);
+    fill: $white;
+  }
+}

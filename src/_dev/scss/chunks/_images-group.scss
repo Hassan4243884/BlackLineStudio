@@ -1,0 +1,49 @@
+.images-group {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  margin-top: rem-calc(60);
+  margin-bottom: rem-calc(32);
+
+  &__col {
+    position: relative;
+    flex: 0 0 50%;
+
+    &:first-child {
+      z-index: 0;
+    }
+
+    &:last-child {
+      z-index: 1;
+      top: rem-calc(-60);
+      left: rem-calc(-30);
+    }
+
+    &:hover {
+      z-index: 2;
+    }
+  }
+
+  &_invert {
+    padding-top: rem-calc(32);
+
+    .images-group__col {
+
+      &:first-child {
+        z-index: 1;
+        top: rem-calc(-60);
+        left: rem-calc(30);
+      }
+
+      &:last-child {
+        z-index: 0;
+        top: 0;
+        left: 0;
+      }
+
+      &:hover {
+        z-index: 2;
+      }
+    }
+  }
+}

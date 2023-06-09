@@ -1,0 +1,43 @@
+@import 'foundation-sites/scss/util/util';
+
+@mixin ib($align: 'middle') {
+  display: inline-block;
+  vertical-align: unquote($align);
+}
+
+@mixin ul-cleaner($margin: 0, $padding: 0) {
+  margin: $margin;
+  padding: $padding;
+  list-style: none;
+}
+
+@mixin placeholder-style($color: $black, $fweight: normal, $ttrans: normal, $opacity: 1) {
+  &::-webkit-input-placeholder {
+    opacity: $opacity;
+    color: $color;
+    font-weight: $fweight;
+    text-transform: $ttrans;
+  }
+
+  &:-moz-placeholder { // Firefox 18-
+    opacity: $opacity;
+    color: $color;
+    font-weight: $fweight;
+    text-transform: $ttrans;
+  }
+
+  &::-moz-placeholder { // Firefox 19+
+    opacity: $opacity;
+    color: $color;
+    font-weight: $fweight;
+    text-transform: $ttrans;
+  }
+
+  &:-ms-input-placeholder {
+    opacity: $opacity;
+    color: $color;
+    font-weight: $fweight;
+    text-transform: $ttrans;
+  }
+}
+

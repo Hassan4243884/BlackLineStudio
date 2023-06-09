@@ -1,0 +1,15 @@
+{% for item in menu_items %}
+        <div class="services-section__icon icon-section _services">
+            <img src="" data-src="/img/icons/custom_tattoos_icon.png" alt="" class="lozad">
+        </div>
+
+        <div class="services-section__body text-white">
+            <div class="services-section__title">{{ item.text }}{{ item.short_description }}</div>
+                {{ item.link_page.test_call }}
+            <p>{% with item.link_page.get_siblings|first as service_page %}{{ service_page.test_call }}{% endwith %}</p>
+        </div>
+
+        <div class="services-section__footer">
+            <a href="{{ item.href }}" class="btn btn_bordered">Learn More</a>
+        </div>
+{% endfor %}

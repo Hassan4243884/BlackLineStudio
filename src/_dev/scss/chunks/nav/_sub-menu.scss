@@ -1,0 +1,42 @@
+.sub-menu {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  top: 250%;
+  left: 0;
+  width: 300px;
+  margin: 0;
+  padding: rem-calc(12) 0;
+  list-style: none;
+  transition: opacity $common-transition, top $common-transition;
+  opacity: 0;
+  background: map-get($custom-palette, blue_dark);
+
+  &__item {
+    &.active {
+      .sub-menu__link {
+        background: map-get($custom-palette, yellow);
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: rem-calc(12 25);
+    transition: background $common-transition;
+    color: $white;
+    font-size: rem-calc(16);
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    &:hover {
+      background: map-get($custom-palette, yellow);
+      color: $white;
+    }
+
+    &:focus {
+      color: $white;
+    }
+  }
+}

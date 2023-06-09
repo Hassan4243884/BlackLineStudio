@@ -1,0 +1,21 @@
+destination: "../htdocs"
+
+baseurl: "/"
+#baseurl: "/show/black-line-studio/"
+
+#assets:
+#    compress:
+#        css: false
+#        js:  false
+
+meta:
+    title: ""
+    description: ""
+
+phone: 416-850-8227
+
+app:
+    color: "#222222"
+    font: "montserrat-regular-webfont.woff2"
+    url: "/"
+#    url: "/show/black-line-studio/"

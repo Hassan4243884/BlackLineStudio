@@ -1,0 +1,21 @@
+{% load static wagtailcore_tags %}
+{% with self.left_part as block %}
+    <div class="cell medium-6 {{ block.additional_classes }}">
+        {% include_block block.body %}
+    </div>
+{% endwith %}
+
+{% with self.right_part as block %}
+    <div class="cell medium-6 {{ block.additional_classes }}">
+        {% include_block block.body %}
+        {% if page.slug == 'home'  %}
+            <div class="ct-logos">
+                <div class="ct-logos__titles">
+                    <p class="ct-title"><strong>Black Line Studio's</strong></p>
+                    <p class="ct-title"><strong>Cares and Sponsors</strong></p>
+                </div>
+                <div class="ct-logos__img"><img src="" data-src="{% static 'img/motionball.png' %}" class="lozad" alt=""></div>
+            </div>
+        {% endif %}
+    </div>
+{% endwith %}

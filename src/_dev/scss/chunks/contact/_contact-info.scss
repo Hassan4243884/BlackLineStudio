@@ -1,0 +1,29 @@
+.contact-info {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  padding-bottom: rem-calc(32);
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($black, .73);
+  }
+
+  .contacts {
+    padding: 0;
+  }
+
+  .inner-banner__cell_r {
+    @include breakpoint(640 down) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.team {
+  position: relative;
+  background-size: cover;
+
+  .slide-btn {
+    margin-bottom: map-get($section-indents, small);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    //.tns-controls {
+    //  display: none;
+    //
+    //  @include breakpoint(mobile up) {
+    //    display: block;
+    //  }
+    //}
+
+    .tns-nav {
+      display: none;
+    }
+  }
+}

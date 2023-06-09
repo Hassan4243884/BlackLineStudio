@@ -1,0 +1,12 @@
+{% load wagtailimages_tags %}
+<div class="benefits-overview">
+    <div class="benefits-overview__icon">
+        {% image self.icon fill-100x100 as mobile_image %}
+        <span class="benefits-overview__ico"><img src="{{ mobile_image.url }}" data-src="{{ mobile_image.url }}" class="lozad fade" alt="" data-loaded="true"></span>
+    </div>
+
+    <div class="benefits-overview__body">
+        <h3 class="benefits-overview__title">{{ self.title }}</h3>
+        <p>{{ self.body }}</p>
+    </div>
+</div>

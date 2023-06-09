@@ -1,0 +1,11 @@
+.btn-section,
+.block-button_block {
+  text-align: center;
+
+  @include breakpoint(medium up) {
+    text-align: left;
+  }
+}
+
+
+

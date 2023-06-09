@@ -1,0 +1,58 @@
+.articles-pagination {
+  li {
+    background: map-get($custom-palette, blue_dark_800);
+    color: $white;
+
+    &:hover {
+      a {
+        background: map-get($custom-palette, yellow);
+      }
+    }
+
+    a {
+      color: $white;
+    }
+
+    &.disabled:hover {
+      background: map-get($custom-palette, blue_dark_800);
+    }
+  }
+
+  .pagination-previous {
+    &.disabled::before {
+      margin: 0;
+      color: $white;
+    }
+
+    a::before {
+      margin: 0;
+      color: $white;
+    }
+
+    &::before {
+      margin: 0;
+      color: $white;
+    }
+  }
+
+  .pagination-next {
+    &.disabled::after {
+      margin: 0;
+      color: $white;
+    }
+
+    a::after {
+      margin: 0;
+      color: $white;
+    }
+
+    &::after {
+      margin: 0;
+      color: $white;
+    }
+  }
+
+  .ellipsis::after {
+    color: $white;
+  }
+}

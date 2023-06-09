@@ -1,0 +1,32 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+{% include head.html %}
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+<div class="preloader" style="opacity: 1;" id="page-loader"></div>
+
+<div class="off-canvas">
+    <div class="off-canvas__sidebar">
+        <div class="close-section">
+            <button class="btn btn_close close-button">x</button>
+        </div>
+
+        {% include nav/oc-menu.html %}
+    </div>
+
+    <div class="off-canvas__container js-head-size">
+        {% include header/header.html %}
+        {% include header/inner-banner.html %}
+
+        {{ content }}
+
+        {% include footer/pre-footer.html %}
+        {% include footer/footer.html %}
+        {% include scripts.html %}
+    </div>
+</div>
+
+</body>
+</html>

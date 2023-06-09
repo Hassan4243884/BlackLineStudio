@@ -1,0 +1,16 @@
+{% load wagtailimages_tags %}
+<div class="art-slider-wrapper slide-btn">
+    <div class="swiper-container">
+        <div class="swiper-wrapper art-slider">
+            {% for image in self.images %}
+            <div class="art-slider__slide swiper-slide">
+                <div class="art-slider__ib inline-hover grayscale-wr">
+                    {% image image width-280 as mobile_image %}
+                    {% image image fill-256x475 as large_image %}
+                    <img data-src="{{ mobile_image.url }}" data-srcset="{{ large_image.url }} 480w" class="swiper-lazy">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

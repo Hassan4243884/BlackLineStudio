@@ -1,0 +1,24 @@
+$ai-x-indent: rem-calc(8);
+
+.action-icon {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-right: $ai-x-indent;
+  margin-left: $ai-x-indent;
+  color: map-get($custom-palette, yellow);
+  font-size: rem-calc(12);
+  font-weight: 500;
+  text-transform: uppercase;
+
+  a {
+    color: map-get($custom-palette, yellow);
+  }
+
+  &__ico {
+    width: 20px;
+    height: 20px;
+    margin-right: $ai-x-indent;
+    fill: map-get($custom-palette, yellow);
+  }
+}

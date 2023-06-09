@@ -1,0 +1,44 @@
+{% load static %}
+<div class="section progress lozad js-progress" data-background-image="{% static 'img/bg/progress.jpg' %}">
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell small-12">
+                <div class="progress-carousel-wrapper slide-btn">
+                    <div class="progress-carousel _fix">
+                        <div class="progress-carousel__slide">
+                            <div class="progress__icon icon-section _triangle">
+                                <img src="" data-src="{% static 'img/icons/happy_clients_icon.png' %}" width="100" height="100" class="lozad" alt="">
+                            </div>
+                            <div class="progress__value js-counter-animate" data-end="{{ self.happy_clients }}">0</div>
+                            <div class="progress__title">HAPPY CLIENTS</div>
+                        </div>
+
+                        <div class="progress-carousel__slide">
+                            <div class="progress__icon icon-section _triangle">
+                                <img src="" data-src="{% static 'img/icons/years_in_business_icon.png' %}" width="100" height="100" class="lozad" alt="">
+                            </div>
+                            <div class="progress__value js-counter-animate" data-end="{{ self.years_in_business }}">0</div>
+                            <div class="progress__title">YEARS IN BUSINESS</div>
+                        </div>
+
+                        <div class="progress-carousel__slide">
+                            <div class="progress__icon icon-section _triangle">
+                                <img src="" data-src="{% static 'img/icons/body_piercings_icon.png' %}" width="100" height="100" class="lozad" alt="">
+                            </div>
+                            <div class="progress__value js-counter-animate" data-end="{{ self.body_piercings }}">0</div>
+                            <div class="progress__title">BODY PIERCINGS</div>
+                        </div>
+
+                        <div class="progress-carousel__slide">
+                            <div class="progress__icon icon-section _triangle">
+                                <img src="" data-src="{% static 'img/icons/tattoos_icon.png' %}" width="100" height="100" class="lozad" alt="">
+                            </div>
+                            <div class="progress__value js-counter-animate" data-end="{{ self.tattoos }}">0</div>
+                            <div class="progress__title">TATTOOS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

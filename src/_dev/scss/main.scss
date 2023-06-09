@@ -1,0 +1,110 @@
+@import 'chunks/settings/foundation';
+@import 'chunks/settings/app';
+@import 'chunks/mixins';
+// Foundation =============================================
+//  Core
+@import 'foundation-sites/scss/foundation';
+//  Modules
+//@include foundation-xy-grid-classes();
+// ========================================================
+
+
+// Motion UI ==============================================
+@include foundation-xy-grid-classes;
+@include foundation-flex-classes;
+@include foundation-typography;
+@include foundation-prototype-spacing;
+@include foundation-prototype-display;
+@include foundation-pagination;
+// ========================================================
+
+//@import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.core";
+//@import "../../../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+@import "libs/swiper/swiper";
+
+@import "chunks/settings/base";
+@import "chunks/fonts/main";
+@import "chunks/typography";
+@import "chunks/section";
+@import "chunks/gutters";
+@import "chunks/backgrounds";
+@import "chunks/substrate";
+@import "chunks/instagram";
+@import "chunks/stars";
+@import "chunks/js/spoiler";
+@import "chunks/rich_text";
+@import "chunks/ct-logos";
+
+@import "chunks/nav/oc-menu";
+@import "chunks/nav/m-dropdown";
+
+@import "chunks/team/team";
+@import "chunks/team/master";
+
+@import "chunks/slider/main-slider";
+@import "chunks/slider/art-slider";
+@import "chunks/slider/swiper-container";
+@import "chunks/slider/gallery";
+@import "chunks/slider/services-carousel";
+@import "chunks/slider/team-carousel";
+@import "chunks/slider/instagram-posts";
+@import "chunks/slider/testimonials";
+@import "chunks/slider/progress-carousel";
+@import "chunks/slider/inner-slider";
+@import "chunks/slider/slide-btn";
+
+@import "chunks/services/h-services";
+@import "chunks/services/services-section";
+@import "chunks/services/services-page";
+@import "chunks/services/body-piercing";
+@import "chunks/services/benefits-overview";
+@import "chunks/services/new-formula";
+@import "chunks/services/services-ico";
+
+@import "chunks/forms/button-group";
+@import "chunks/forms/btn";
+@import "chunks/forms/pf-form";
+@import "chunks/forms/form-section";
+@import "chunks/forms/search";
+@import "chunks/forms/btn-section";
+
+@import "chunks/icon-section";
+
+@import "chunks/effects";
+@import "chunks/progress";
+@import "chunks/h-actions";
+@import "chunks/socials";
+@import "chunks/js/accordion";
+@import "chunks/js/main-accordion";
+@import "chunks/main-tabs";
+@import "chunks/mobile-pos";
+@import "chunks/images-group";
+
+@import "chunks/contact/contacts";
+@import "chunks/contact/contact-info";
+@import "chunks/contact/contact-map";
+
+@import "chunks/articles/blog-previous";
+@import "chunks/articles/blog-actions";
+@import "chunks/articles/action-icon";
+@import "chunks/articles/blog-post";
+@import "chunks/articles/blog-sidebar";
+@import "chunks/articles/categories";
+@import "chunks/articles/category";
+@import "chunks/articles/recent-post";
+@import "chunks/articles/articles-pagination";
+
+@import "chunks/icon-frame";
+@import "chunks/thank-you";
+
+@import "chunks/footer/pre-footer";
+@import "chunks/footer/footer";
+@import "chunks/footer/footer-socials";
+@import "chunks/footer/footer-menu";
+@import "chunks/footer/footer-menu";
+@import "chunks/footer/marketing";
+
+@import "libs/tiny-slider/tiny-slider";
+@import "libs/glightbox/glightbox";
+@import "libs/aos/aos";

@@ -1,0 +1,31 @@
+<script>
+  function removeLoader() {
+    var loader = document.getElementById('page-loader');
+    (function fade() {
+      if ((loader.style.opacity -= .05) < 0) {
+        loader.style.display = 'none';
+        if (!('remove' in Element.prototype)) {
+          Element.prototype.remove = function() {
+            if (this.parentNode) {
+              this.parentNode.removeChild(this);
+            }
+          };
+        }
+        loader.remove();
+      }
+      else {
+        requestAnimationFrame(fade);
+      }
+    })();
+  }
+</script>
+
+{{ '"css:main onload=removeLoader()" "js:vendor defer:true" "js:main defer:true"' | jekyll_asset_multi }}
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;key=AIzaSyBa3ArTe4Le8wls83wzEZXp8Dcjvg7vijA"></script>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+
+
+
+
+
+

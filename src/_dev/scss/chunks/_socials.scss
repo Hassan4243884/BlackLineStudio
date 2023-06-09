@@ -1,0 +1,52 @@
+.socials {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__item {
+    @include ib;
+    margin-right: rem-calc(7);
+    margin-bottom: rem-calc(8);
+  }
+
+  &__link {
+    display: block;
+    width: 42px;
+    height: 42px;
+    transition: background $common-transition;
+    background: map-get($custom-palette, blue_dark);
+    line-height: 42px;
+    text-align: center;
+
+    &._fb {
+      &:hover {
+        background: map-get($social-palette, fb);
+      }
+    }
+
+    &._inst {
+      &:hover {
+        background: map-get($social-palette, inst);
+      }
+    }
+
+    &._tw {
+      &:hover {
+        background: map-get($social-palette, tw);
+      }
+    }
+
+    &._pint {
+      &:hover {
+        background: map-get($social-palette, pint);
+      }
+    }
+  }
+
+  &__ico {
+    @include ib;
+    width: 25px;
+    height: 25px;
+    fill: $white;
+  }
+}

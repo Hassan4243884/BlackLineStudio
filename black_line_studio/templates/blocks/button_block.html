@@ -1,0 +1,1 @@
+<p><a href="{% if self.hard_link %}{{ self.hard_link }}{% elif self.inner_link %}{{ self.inner_link.get_url }}{% else %}#{% endif %}" class="btn btn_bordered">{{ self.text }}</a></p>

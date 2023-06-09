@@ -1,0 +1,67 @@
+.off-canvas {
+  position: relative;
+  overflow: hidden;
+
+  &.show {
+    opacity: 1;
+  }
+}
+
+.off-canvas__sidebar {
+  position: fixed;
+  z-index: 105;
+  width: 320px;
+  height: 100%;
+  padding: 16px;
+  overflow: auto;
+  transform: translateX(-100%);
+  transition: transform .5s;
+  background-color: rgba(map-get($custom-palette, blue_dark), 1);
+}
+
+.off-canvas.active .off-canvas__sidebar {
+  transform: translateX(0);
+}
+
+.off-canvas.active .overlay {
+  z-index: 100;
+  height: 100%;
+  opacity: .6;
+}
+
+.off-canvas__title {
+  text-align: center;
+}
+
+.close-section {
+  text-align: right;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  transition: opacity .5s, height .1s;
+  background-color: map-get($custom-palette, blue_dark);
+}
+
+.oc-actions {
+  display: block;
+  text-align: center;
+
+  @media only screen and (min-width: 480px) {
+    display: none;
+  }
+}
+
+.oc-actions-group {
+  margin-bottom: map-get($section-indents, small);
+}
+
+
+

@@ -1,0 +1,16 @@
+{% load static wagtailcore_tags %}
+<div class="grid-container {{ self.additional_classes }}">
+    {% with self.body|first as first_block %}
+        {% if first_block.block_type != 'faq_section' %}
+            <div class="grid-x {{ self.grid_padding }} {{ self.grid_align }} {{ self.inner_additional_classes }}">
+                {% for block in self.body %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
+        {% else %}
+            {% for block in self.body %}
+                {% include_block block %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>

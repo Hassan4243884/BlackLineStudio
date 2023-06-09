@@ -1,0 +1,48 @@
+$btm-indent: rem-calc(30);
+
+.blog-previous {
+  margin-bottom: $btm-indent;
+  padding-top: $btm-indent;
+  padding-bottom: $btm-indent;
+  border-bottom: 2px rgba($white, .1) solid;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &__image {
+    margin-bottom: $btm-indent;
+  }
+
+  &__title {
+    margin-bottom: $btm-indent;
+    transition: color $common-transition;
+    color: $white;
+    font-size: rem-calc(26);
+    font-weight: 600;
+    line-height: 1.3;
+
+    &:hover {
+      color: map-get($custom-palette, yellow);
+
+      a {
+        color: map-get($custom-palette, yellow);
+      }
+    }
+
+    a {
+      transition: inherit;
+      color: $white;
+
+      &:focus {
+        color: map-get($custom-palette, yellow);
+      }
+    }
+  }
+
+  &__body {
+    color: $white;
+    font-size: rem-calc(16);
+    font-weight: 400;
+  }
+}

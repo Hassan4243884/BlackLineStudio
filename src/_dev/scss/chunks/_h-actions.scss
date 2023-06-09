@@ -1,0 +1,31 @@
+.h-actions {
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &__btn {
+    width: auto;
+    min-width: 370px;
+    border-radius: $btn-full-radius;
+
+    @include breakpoint(420 down) {
+      width: 100%;
+      min-width: 100px;
+      padding-right: rem-calc(6);
+      padding-left: rem-calc(6);
+    }
+
+    &:hover {
+      background: map-get($custom-palette, blue_dark_800);
+    }
+
+    &:focus {
+      background: map-get($custom-palette, blue_dark_800);
+    }
+  }
+
+  &__phone {
+    @include breakpoint(420 down) {
+      display: none;
+    }
+  }
+}

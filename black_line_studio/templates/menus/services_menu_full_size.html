@@ -1,0 +1,20 @@
+{% load static %}
+{% for item in menu_items %}
+<div class="cell large-4 medium-6 services-page__col">
+                <div class="services-section one-line-hover">
+                    <div class="services-section__icon icon-section _services">
+                        {% include item.link_page.menu_icon %}
+
+                    </div>
+
+                    <div class="services-section__body text-white">
+                        <div class="services-section__title">{{ item.text }}</div>
+                        <p>{{ item.link_page.short_description }}</p>
+                    </div>
+
+                    <div class="services-section__footer">
+                        <a href="{{ item.href }}" class="btn btn_bordered">Learn More</a>
+                    </div>
+                </div>
+            </div>
+{% endfor %}

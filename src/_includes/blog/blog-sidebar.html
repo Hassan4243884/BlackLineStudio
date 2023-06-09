@@ -1,0 +1,47 @@
+<div class="blog-sidebar">
+    <div class="blog-sidebar__container">
+        <form action="">
+            <div class="search">
+                <input type="text" name="search" class="search__field" placeholder="search...">
+                <button class="btn search__btn">{% include mixins/svg-ico.html ico="search" class="search__ico" %}</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="blog-sidebar__container">
+        <h2 class="blog-sidebar__title">Categories</h2>
+
+        <ul class="categories">
+            {% for item in site.data.blog.categories %}
+                <li class="category">
+                    <a href="#" class="category__title">{{ item.title }}</a>
+                    <span class="category__counter">{{ item.counter }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="blog-sidebar__container">
+        <h2 class="blog-sidebar__title">Recent posts</h2>
+
+        <div class="recent-posts">
+            <div class="recent-post">
+                <a href="#" class="recent-post__image"><img src="" data-src="{{ site.app.url }}img/blog/recent_post_img.jpg" class="lozad grayscale" alt=""></a>
+
+                <div class="recent-post__container">
+                    <h3 class="recent-post__title"><a href="#">The Best Tattoo Trends of 2017</a></h3>
+                    <time class="recent-post__date" datetime="2018-12-20">December 20, 2017</time>
+                </div>
+            </div>
+
+            <div class="recent-post">
+                <a href="#" class="recent-post__image"><img src="" data-src="{{ site.app.url }}img/blog/recent_post_img.jpg" class="lozad grayscale" alt=""></a>
+
+                <div class="recent-post__container">
+                    <h3 class="recent-post__title"><a href="#">Tattoos Every Summer-Lover Needs</a></h3>
+                    <time class="recent-post__date" datetime="2018-01-01">june 1, 2017</time>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

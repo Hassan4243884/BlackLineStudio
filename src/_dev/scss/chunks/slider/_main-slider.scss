@@ -1,0 +1,56 @@
+.main-slider-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  //height: 80vh;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($black, .73);
+  }
+
+  .tns-controls {
+    display: none;
+  }
+
+  button[data-action] {
+    display: none;
+  }
+
+  .tns-nav {
+    position: absolute;
+    z-index: 10;
+    bottom: rem-calc(20);
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    button {
+      width: 10px;
+      height: 10px;
+      @include ib;
+      margin: rem-calc(4);
+      border: 2px map-get($custom-palette, yellow) solid;
+      border-radius: 100px;
+
+      &.tns-nav-active {
+        background: map-get($custom-palette, yellow);
+      }
+    }
+  }
+}
+
+.main-slider {
+
+  &__slide {
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+  }
+}

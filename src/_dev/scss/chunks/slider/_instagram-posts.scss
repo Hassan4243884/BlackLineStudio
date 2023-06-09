@@ -1,0 +1,37 @@
+.instagram-posts {
+
+  @include breakpoint(medium up) {
+    min-height: 250px;
+    padding-bottom: 0;
+  }
+
+  @include breakpoint(large up) {
+    min-height: 200px;
+  }
+
+  @include breakpoint(1520 up) {
+    min-height: 250px;
+  }
+
+  &__link {
+    display: block;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    @include breakpoint(large up) {
+      height: 200px;
+    }
+
+    @include breakpoint(1520 up) {
+      height: 250px;
+    }
+
+    &.grayscale {
+      @include breakpoint(480 down) {
+        filter: grayscale(0);
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{% load static wagtailuserbar wagtailcore_tags recaptcha2 %}
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+
+        <link rel='shortcut icon' type='image/x-icon' href='{% static 'img/favicon.ico' %}' />
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %} - {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+        {% block  description%}<meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% endif %}">{% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preload" href="{% static 'fonts/montserrat-regular-webfont.woff2' %}" as="font" type="font/woff2" crossorigin>
+        <meta name="theme-color" content="{{ site.app.color }}">
+        {% block canonical_link %}
+            <link rel="canonical" href="{{  self.full_url  }}">
+        {% endblock %}
+        <meta name="google-site-verification" content="Btdfd43y9SlAvQlb79An01RiJPtApbn_OterwYciVGM" />
+        <style>
+            {% include 'css/start.css'%}
+        </style>
+        <meta property="og:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}" />
+        <meta property="og:description" content="{% if page.meta.description %}{{ page.meta.description }}{% else %}{{ site.meta.description }}{% endif %}" />
+        <meta property="og:url" content="{{ self.full_url }}" />
+        <meta property="og:image" content="https://blacklinestudios.ca{% static 'img/logo-share.png'%}">
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}" />
+        <meta name="twitter:description" content="{% if page.meta.description %}{{ page.meta.description }}{% else %}{{ site.meta.description }}{% endif %}" />
+        <meta name="twitter:site" content="@blacklinestudio" />
+        <meta name="twitter:image" content="https://blacklinestudios.ca{% static 'img/logo-share.png'%}" />
+        <meta name="twitter:creator" content="@blacklinestudio" />
+
+        {% block robots %} {% endblock robots %}
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KLT575X');</script>
+        <!-- End Google Tag Manager -->
+        <!-- Global site tag (gtag.js) - Google Ads: 949789819 -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-949789819"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-949789819');
+        </script>
+        <!-- Facebook Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '257236654928885');
+        fbq('track', 'PageView');
+        </script>
+        <noscript>
+        <img height="1" width="1"
+        src="https://www.facebook.com/tr?id=257236654928885&ev=PageView
+        &noscript=1"/>
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KLT575X" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div class="preloader" style="opacity: 1;" id="page-loader"></div>
+        {% wagtailuserbar %}
+        <div class="off-canvas">
+            {% include 'includes/sidebar.html' %}
+            <div class="off-canvas__container js-head-size">
+                {% include 'includes/header.html' %}
+
+                {% block content %}{% endblock %}
+                {% block prefooter %}
+                {% include 'includes/pre-footer.html' %}
+                {% endblock %}
+                {% include 'includes/footer.html' %}
+            </div>
+
+        </div>
+        {% include 'includes/scripts.html' %}
+        {% block extra_css %}
+        {% endblock %}
+        {% block extra_js %}
+        {% endblock %}
+
+<script type="text/javascript">
+(function(){
+var t = document.createElement('script'); t.type = 'text/javascript';
+t.src = 'https://tracker.icmconsulting.com/t.js?cid=blacklinestudios.ca&ts='+new Date().getTime(); t.async = true;
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(t, s);
+})();
+</script>
+
+{% if self.slug == 'thank-you' %}
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('form-error');
+        if (myParam){
+            var _phoneNamber = '647-341-0099'
+            var _companyName = 'Black Line Studio'
+            var thank_you_text = '<h1 class="thank-you__title">Thank you for contacting our company!</h1><br>'
+                + '<p class="thank-you__content">Unfortunately, we are unable to send this message due to the following reason:</p>'
+                + '<br><p class="thank-you__content" style="font-weight: bold">' + myParam + '</p><br>'
+                + '<p class="thank-you__content">If you believe you have made a mistake in the submission, please resubmit a new form with correct information.</p>'
+                + '<p class="thank-you__content">If you still unable to submit a form to us, you can contact our office directly by calling us at '
+                + '<a href="tel:' + _phoneNamber + '" >' + _phoneNamber + '</a></p>'
+                + '<p class="thank-you__content">We apologize for any inconvenience and hoping to hear from you soon.</p>'
+                + '<p class="thank-you__content">Thank You</p>'
+                + '<p class="thank-you__content" style="font-weight: bold">' + _companyName + '</p>'
+
+            var thank_you_block = document.querySelector('.thank-you-message')
+            thank_you_block.style.marginTop = '20px'
+            thank_you_block.innerHTML = thank_you_text
+        }
+
+    </script>
+{% endif %}
+    </body>
+</html>

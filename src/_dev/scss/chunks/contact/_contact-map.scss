@@ -1,0 +1,7 @@
+.contact-map {
+  height: 280px;
+
+  @include breakpoint(mobile up) {
+    height: 420px;
+  }
+}

@@ -1,0 +1,7 @@
+.pre-footer {
+  background-position: 90% bottom;
+
+  @include breakpoint(large up) {
+    background-position: 90% 10%;
+  }
+}

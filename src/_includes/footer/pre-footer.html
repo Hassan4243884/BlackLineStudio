@@ -1,0 +1,16 @@
+{% if page.pre-footer %}
+<section class="section pre-footer bg-pattern _dark lozad" id="pre-footer" data-background-image="{{ site.app.url }}img/bg/flower_pf_bg.png">
+    <div class="grid-container">
+        <div class="grid-x align-middle">
+            <div class="cell large-7 medium-6 pre-footer__form medium-order-2">
+                {% include footer/pre-footer-form.html %}
+            </div>
+
+            <div class="cell large-5 medium-6 pre-footer__contacts medium-order-1">
+                {% include footer/pre-footer-contacts.html %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+

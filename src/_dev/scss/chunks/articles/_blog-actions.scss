@@ -1,0 +1,13 @@
+.blog-actions {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: $btm-indent;
+  color: $white;
+  font-size: rem-calc(12);
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+

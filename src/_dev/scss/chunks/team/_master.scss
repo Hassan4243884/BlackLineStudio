@@ -1,0 +1,53 @@
+.master {
+  display: inline-block;
+  position: relative;
+  padding-bottom: rem-calc(100);
+  transition: all $common-transition;
+  text-align: center;
+
+  &:hover {
+    .master__body {
+      min-height: 155px;
+    }
+  }
+
+  &__image {
+    text-align: center;
+
+    img {
+      display: inline-block;
+    }
+  }
+
+  &__body {
+    display: flex;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100px;
+    padding: map-get($section-gutters, extra-small) rem-calc(0);
+    transition: all $common-transition;
+    background: $black;
+    color: $white;
+  }
+
+  &__name {
+    margin-bottom: map-get($section-indents, small);
+    font-size: rem-calc(22);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__profession {
+    color: map-get($custom-palette, yellow);
+    font-size: rem-calc(16);
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+}

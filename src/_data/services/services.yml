@@ -1,0 +1,105 @@
+[
+{
+ icon: 'custom_tattoos_icon.png',
+ title: 'Custom Tattoos',
+ content: 'When you’re looking for a high-quality tattoo and an enjoyable experience,
+           Black Line Studio is the place to go. Get your ink done by one of our professional artists and turn your body into a work of
+           art in the most sophisticated environment. Deciding on a design for your tattoo idea? Our custom tattoo artists are there
+           to make your ideas a reality.',
+  btn_link: 'custom-tattoos.html',
+  delay: '50',
+  svg: 'bird_icn'
+},
+{
+ icon: 'body_piercing.png',
+ title: 'Body Piercing',
+ content: 'The Spectra laser has a multitude
+           of uses from tattoo removal to reducing
+           the appearance of irregularities in the skin. Opportunely, it also helps to reduce the appearance
+           of acne and any acne-related scarring. Book a free consultation with
+           one of our professional laser technicians
+           to see what we can do for you.',
+ btn_link: 'body-piercings.html',
+  delay: '100',
+  svg: 'ear_icn'
+},
+{
+ icon: 'tattoo_cover_ups.png',
+ title: 'Tattoo Cover-Ups',
+ content: 'Cover-ups are a fantastically creative
+           way to breathe new life into old tattoos.
+           Some people opt to simply remold an
+           old design into a more updated/better version of the piece, while others prefer
+           to completely block out any evidence
+           of the old tattoo. If the regret is
+           strong, people usually go with
+           the second option.',
+ btn_link: 'tattoo-cover-ups.html',
+ delay: '150',
+ svg: 'gun_icn'
+},
+{
+ icon: 'tattoo_removal_icon.png',
+ title: 'Tattoo Removal',
+ content: 'Black Line Studio’s professional laser tattoo removal technicians offer the process of removing embedded ink from the layers
+           of skin using the highest quality laser. Lasers work by producing short pulses
+           of intense light that selectively target the tattoo pigment while minimizing damage
+           to the surrounding skin to leave you with the natural beautiful skin you started with.',
+ btn_link: 'laser-tattoo-removal.html',
+  delay: '200',
+  svg: 'laser_icn'
+},
+{
+ icon: 'airbrushed_tattoos.png',
+ title: 'Airbrushed tattoos',
+ content: 'Generally lasting 3-5 days depending on location, activity and proper care, airbrushed tattoos are great
+  for testing a permanent tattoo design on your body while you prepare for the commitment. Being able to see yourself
+   with a tattoo before it actually happens will take away any fears or anxiety over the outcome and allow you step into the real tattoo.',
+ delay: '250',
+ svg: 'airbrush_icn'
+},
+{
+ icon: 'body_art.png',
+ title: 'Body art',
+ content: 'Black Line Studio uses Paasche water-based body art airbrush paints
+           to achieve any look. Just like temporary tattoos, the paint can last up to 5 days
+           if desired, however, the paint can also
+           be removed as soon as you like with exfoliation. Carbon Peel facial is a great way
+           to get a thorough clean and remove any excess paint on the face and in your pores.',
+ delay: '300',
+  svg: 'body_art_icn'
+},
+{
+ icon: 'hollywood_face_peel.png',
+ title: 'Hollywood face peel',
+ content: 'Often referred to as the “Hollywood facial,” the Spectra™ carbon facial peel is a revolutionary laser treatment
+           which delivers the benefits of aggressive skin rejuvenation procedures instantly, without the discomfort or downtime typically
+           associated with such treatments. The Spectra™ carbon facial peel allows you to save time and money while still reaping the same results.',
+ btn_link: 'hollywood-face-peel.html',
+   delay: '350',
+   svg: 'face_icn'
+},
+{
+ icon: 'acne_scar_removal.png',
+ title: 'Acne scar removal',
+ content: 'During a peel, a client will undergo several passes of the Spectra laser, which omits quick pulses of intense light.
+           These pulses of light target the melanin in the skin, breaking them up for the body’s natural processes to flush out.
+           During the process, the laser heats up the skin, causing
+           it to contract and stimulate the
+           production of collagen.',
+ btn_link: 'acne-scar-removal.html',
+   delay: '400',
+   svg: 'acne-removal'
+},
+{
+ icon: 'reviv_vitamin_drip.png',
+ title: 'REVIV Vitamin Drip',
+ content: 'REVIV is the leading global provider of IV infusion and vitamin booster shot wellness treatments.
+           We have over 40 locations across 4 continents ranging from London, Leeds, Lisbon, Ibiza, Abu Dhabi,
+           Johannesburg, Cape Town, Hong Kong,
+           LA, NYC, Miami Beach, Las Vegas,
+           Toronto and many more.',
+   delay: '450',
+   svg: 'reviv_icn'
+},
+]

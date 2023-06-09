@@ -1,0 +1,19 @@
+{% load static %}
+{% for item in menu_items %}
+<div class="services-carousel__slide js-max-height">
+    <div class="services-section one-line-hover">
+        <div class="services-section__icon icon-section _services">
+                {% include item.link_page.menu_icon %}
+        </div>
+
+        <div class="services-section__body text-white">
+            <h2 href="" class="services-section__title">{{ item.text }}</h2>
+            <p>{{ item.link_page.short_description|safe }}</p>
+        </div>
+
+        <div class="services-section__footer">
+            <a href="{{ item.href }}" class="btn btn_bordered">Learn More</a>
+        </div>
+    </div>
+</div>
+{% endfor %}

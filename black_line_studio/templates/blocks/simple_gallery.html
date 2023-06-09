@@ -1,0 +1,16 @@
+{% load static wagtailimages_tags %}
+<div class="gallery-wrapper">
+    <div class="slide-btn">
+        <div class="gallery">
+            {% for image in self.images %}
+            <div class="gallery__slide grayscale-wr">
+                {% image image fill-200x200 as image_scale %}
+                <a href="{{ image.file.url }}" class="zoom-hover glightbox">
+                    <img src="{% static 'img/placeholder1.png' %}" data-src="{{ image_scale.url }}" alt="" width="360" height="360" class="grayscale tns-lazy-img">
+                    <svg id=" " class="zoom-hover__ico svg-ico svg-ico_zoom-in"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_zoom-in"></use></svg>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{% load menu_tags %}
+<nav class="header__col header__nav">
+    <ul class="h-menu">
+        {% for item in menu_items %}
+            {% if item.has_children_in_menu %}
+                <li class="h-menu__item dropdown {{ item.active_class }}">
+                    <a href="{{ item.href }}" class="h-menu__link"><span class="h-menu__text">{{ item.text }}</span></a>
+                    {% sub_menu item template='menus/header_dropdown.html' %}
+                </li>
+            {% else %}
+                <li class="h-menu__item {{ item.active_class }}">
+                    <a href="{{ item.href }}" class="h-menu__link"><span class="h-menu__text">{{ item.text }}</span></a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</nav>

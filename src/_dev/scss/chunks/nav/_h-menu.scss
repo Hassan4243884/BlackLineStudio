@@ -1,0 +1,97 @@
+.h-menu {
+  display: none;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include breakpoint(980 up) {
+    display: flex;
+  }
+
+  @include breakpoint(large up) {
+    justify-content: space-around;
+  }
+
+  &__item {
+    position: relative;
+
+    &:hover {
+      .sub-menu {
+        visibility: visible;
+        top: 85%;
+        opacity: 1;
+      }
+    }
+
+    &.active {
+      .h-menu__link::after {
+        width: 100%;
+      }
+    }
+
+    &.dropdown {
+
+      .h-menu__text {
+        padding-right: rem-calc(28);
+
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: rem-calc(4);
+          width: 8px;
+          height: 8px;
+          transform: rotate(-45deg);
+          border-bottom: 2px $white solid;
+          border-left: 2px $white solid;
+        }
+      }
+    }
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+    padding: rem-calc(40 10);
+    transition: color $common-transition, padding $common-transition;
+    color: $white;
+    font-size: rem-calc(14);
+    font-weight: 500;
+    line-height: 1;
+    text-transform: uppercase;
+
+    @include breakpoint(large up) {
+      font-size: rem-calc(16);
+    }
+
+    &:hover {
+      color: map-get($custom-palette, yellow);
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &:focus {
+      color: $white;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      transition: width .5s;
+      background: map-get($custom-palette, yellow);
+    }
+  }
+
+  &__text {
+    display: inline-block;
+    position: relative;
+  }
+}

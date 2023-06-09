@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="inner-banner inner-banner_thank-you lozad" data-background-image="{% static '/img/banners/inner_banner.jpg' %}"></div>
+<div class="section thank-you-wrapper bg-pattern _bg-center-left _dark _bg-center lozad" data-background-image="{% static 'img/bg/flower_bg.png' %}">
+    <div class="grid-container">
+        <div class="grid-x align-center">
+            <div class="cell large-8">
+                <div class="thank-you">
+                    <div class="thank-you__container text-center">
+                        <div class="icon-frame"><svg id=" " class="icon-frame__ico svg-ico svg-ico_tattoo-filled"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_tattoo-filled"></use></svg></div>
+                        <div class="thank-you-message">
+                            <h1 class="thank-you__title">{{ self.header }}</h1>
+                            <p class="thank-you__content">{{ self.body }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block prefooter %}
+{% endblock %}

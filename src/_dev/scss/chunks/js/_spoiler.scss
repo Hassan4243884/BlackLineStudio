@@ -1,0 +1,71 @@
+.spoiler-container {
+  .spoiler-btn {
+    display: inline-block;
+    font-weight: 600;
+  }
+
+  &_for-mobile {
+    .spoiler-btn {
+      display: inline-block;
+
+      @include breakpoint(mobile up) {
+        display: none;
+      }
+    }
+
+    .spoiler-mobile.hidden {
+      display: none;
+
+      @include breakpoint(mobile up) {
+        display: block;
+      }
+    }
+  }
+
+  &_top {
+    &.active {
+      .spoiler-open {
+        display: none;
+      }
+
+      .spoiler-mobile_hidden {
+        display: block;
+      }
+    }
+  }
+}
+
+.spoiler.hidden {
+  display: none;
+}
+
+.spoiler-open {
+  display: inline-block;
+
+  @include breakpoint(mobile up) {
+    display: none;
+  }
+}
+
+.spoiler-close {
+  display: block;
+
+  @include breakpoint(mobile up) {
+    display: none;
+  }
+}
+
+.spoiler-mobile {
+  &_hidden {
+    display: none;
+
+    @include breakpoint(mobile up) {
+      display: block;
+    }
+  }
+}
+
+.spoiler-mobile.hidden {
+  display: none;
+}
+

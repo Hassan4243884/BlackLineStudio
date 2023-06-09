@@ -1,0 +1,9 @@
+.services-page {
+  &__col {
+    padding-bottom: map-get($grid-column-gutter, medium);
+  }
+  
+  .services-section {
+    //background: #202227;
+  }
+}

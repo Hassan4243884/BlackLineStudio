@@ -1,0 +1,11 @@
+{% load wagtailimages_tags %}
+<div class="slide-btn slide-btn_hide-btn slide-btn_hide-auto slide-btn_btm-gutter-2">
+    <div class="inner-slider">
+        {% for image in self.images %}
+        <div class="inner-slider__item">
+            {% image image fill-544x461 as tmp_photo %}
+            <div class="image-bordered"><img src="" data-src="{{ tmp_photo.url }}" alt="asdas" class="lozad"></div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

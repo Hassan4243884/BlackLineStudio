@@ -1,0 +1,14 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>{% if page.meta.title %}{{ page.meta.title }}{% else %}{{ site.meta.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.meta.description %}{{ page.meta.description }}{% else %}{{ site.meta.description }}{% endif %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preload" href="{{ site.app.url }}fonts/{{ site.app.font }}" as="font" type="font/woff2" crossorigin>
+
+    <meta name="theme-color" content="{{ site.app.color }}">
+    <style>
+        {% include css/start.css %}
+    </style>
+</head>

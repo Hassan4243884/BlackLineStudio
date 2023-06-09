@@ -1,0 +1,51 @@
+{% load static %}
+<aside class="cell large-4 medium-5">
+    <div class="blog-sidebar">
+        <div class="blog-sidebar__container">
+            <form action="/blog/" method="get">
+                <div class="search">
+                    <input type="text" name="q" class="search__field" placeholder="search..." value="{{ search_query|default_if_none:'' }}">
+                    <button class="btn search__btn">
+                        <svg id=" " class="search__ico svg-ico svg-ico_search">
+                            <use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_search"></use>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class="blog-sidebar__container">
+            <h2 class="blog-sidebar__title">Categories</h2>
+
+            <ul class="categories">
+                {% for category in all_categories %}
+                    {% if category.blogpage_set.all|length > 2 %}
+                        <li class="category">
+                            <a href="{% url 'blog:category' category.slug %}" class="category__title">{{ category }}</a>
+                            <span class="category__counter">{{ category.blogpage_set.all|length }}</span>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+            </ul>
+        </div>
+
+        <div class="blog-sidebar__container">
+            <h2 class="blog-sidebar__title">Recent posts</h2>
+
+            <div class="recent-posts">
+                {% for post in latest_posts %}
+                <div class="recent-post">
+                    <a href="#" class="recent-post__image"><img src="" data-src="/img/blog/recent_post_img.jpg"
+                                                                class="lozad grayscale" alt=""></a>
+
+                    <div class="recent-post__container">
+                        <h3 class="recent-post__title"><a href="{{ post.get_url }}">{{ post.title }}</a></h3>
+                        <time class="recent-post__date" datetime="{{ post.date|date:"Y-m-d" }}">{{ post.date|date:"F jS, Y" }}</time>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</aside>

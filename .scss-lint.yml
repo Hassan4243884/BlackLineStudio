@@ -1,0 +1,11 @@
+linters:
+    PropertySortOrder:
+        order: smacss
+        separate_groups: false
+    NestingDepth:
+        enabled: true
+        max_depth: 4
+        ignore_parent_selectors: true
+    SelectorFormat:
+        enabled: true
+        convention: hyphenated_BEM

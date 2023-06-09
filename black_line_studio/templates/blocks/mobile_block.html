@@ -1,0 +1,21 @@
+{% load wagtailcore_tags %}
+
+<style>
+@media screen and (max-width: 46.1875em){
+{% for block in self.body %}
+
+        .mobile-pos .mobile-inner-{{ forloop.counter }}{
+            order:{{ block.position }} !important;
+        }
+
+{% endfor %}
+}
+</style>
+
+<div class="mobile-pos">
+    {% for block in self.body %}
+        <div class="mobile-inner-{{ forloop.counter }}">
+            {% include_block block.body %}
+        </div>
+    {% endfor %}
+</div>

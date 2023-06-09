@@ -1,0 +1,40 @@
+{% load wagtailcore_tags static wagtailimages_tags %}
+
+
+<div class="blog-previous">
+    {% if blog.header_image %}
+        <div class="text-center">
+            <div class="blog-previous__image">
+                {% image blog.header_image fill-736x380 as post_image %}
+                <a href="{% pageurl blog %}"><img src="" data-src="{{ post_image.url }}" class="lozad grayscale" alt=""></a>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="blog-previous__body">
+        <h2 class="blog-previous__title"><a href="{% pageurl blog %}">{{ blog.title }}</a></h2>
+
+        <div class="blog-actions">
+            {% if blog.categories.all %}
+            <span>Posted by {{ blog.author }} in:</span>
+            <span  class="action-icon">
+                <svg id=" " class="action-icon__ico svg-ico svg-ico_calendar"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_price-tag"></use></svg>
+                {% for cat in blog.categories.all %}
+                    <a href="{% url 'blog:category' cat.category.slug %}">{{ cat.category.name }}</a>{% if not forloop.last %},&nbsp;{% endif %}
+                {% endfor %}
+            </span>
+            {% endif %}
+            {% if blog.date %}
+            <span>on</span>
+            <time class="action-icon">
+                <svg id=" " class="action-icon__ico svg-ico svg-ico_price-tag"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_calendar"></use></svg>
+                {{ blog.date|date:"F jS, Y" }}
+            </time>
+            {% endif %}
+        </div>
+
+        <div class="wysiwyg">
+            {{ blog.body|richtext|truncatewords_html:70 }}
+        </div>
+    </div>
+</div>

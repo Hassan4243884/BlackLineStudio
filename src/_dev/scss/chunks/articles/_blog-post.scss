@@ -1,0 +1,32 @@
+$elem-y-indent: rem-calc(30);
+
+.blog-post {
+  &__image {
+    margin-bottom: $elem-y-indent;
+  }
+
+  &__title {
+    margin-bottom: $elem-y-indent;
+    color: $white;
+    font-size: rem-calc(26);
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  &__body {
+    ul {
+      margin-bottom: rem-calc(16);
+
+      li {
+        padding-bottom: rem-calc(6);
+
+        &::before {
+          top: rem-calc(8);
+          width: 6px;
+          height: 6px;
+          background: $white;
+        }
+      }
+    }
+  }
+}

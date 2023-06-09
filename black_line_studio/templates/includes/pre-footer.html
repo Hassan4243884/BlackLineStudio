@@ -1,0 +1,74 @@
+{% load static %}
+<section class="section pre-footer bg-pattern _dark lozad" data-background-image="{% static 'img/bg/flower_pf_bg.png' %}">
+    <div class="grid-container">
+        <div class="grid-x align-middle">
+            <div class="cell large-7 medium-6 pre-footer__form medium-order-2">
+                {% include 'includes/footer_form.html' %}
+
+
+            </div>
+
+
+
+            <div class="cell large-5 medium-6 pre-footer__contacts medium-order-1">
+                <div class="contacts lozad accordion accordion_mobile" data-background-image="{% static 'img/bg/heart.png' %}">
+                    <div itemscope itemtype="http://schema.org/LocalBusiness" >
+                        <span itemprop="name" style="display: none">Black Line Studio</span>
+                        <img itemprop="image" style="display: none" src="https://blacklinestudios.ca/static/img/logo.png" alt="Logo - Black Line Studio" />
+
+                    {% for shop in footer_shops_list %}
+                        <div class="contacts__container accordion__container {% if forloop.first %}open{% endif %}">
+                        <h2 class="contacts__title accordion__title js-accordion-title">Black Line Studio<br/> {{ shop.title }}</h2>
+                        <div class="accordion__body">
+                        <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" >
+                            <div class="contacts__section">
+                                <svg id=" " class="contacts__ico svg-ico svg-ico_placeholder"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_placeholder"></use></svg>
+                                <div class="contacts__text spoiler-container">
+                                    <p>{{ shop.address|safe|linebreaksbr }}</p>
+                                    {% if shop.footer_more_details %}
+                                    <div class="spoiler-mobile hidden js-spoiler">
+                                        <p><i>{{ shop.footer_more_details }}</i></p>
+                                    </div>
+
+                                    <button class="spoiler-btn contacts__link">More details</button>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            {% if shop.email %}
+                            <div class="contacts__section">
+                                <svg id=" " class="contacts__ico svg-ico svg-ico_envelope"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_envelope"></use></svg>
+                                <div class="contacts__text"><a href="mailto:{{ shop.email }}" class="contacts__link" onclick="gtag('event', 'click to email', {'send_to': 'UA-61179955-1','event_category': 'Email','event_label': 'Footer Downtow Email'});">Email Us</a></div>
+                            </div>
+                            {% endif %}
+                            {% if shop.phone %}
+                            <div class="contacts__section">
+                                <svg id="" class="contacts__ico svg-ico svg-ico_phone-call"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_phone-call"></use></svg>
+                                <div class="contacts__text"><a href="tel:{{ shop.phone }}" class="contacts__link" id="icm-{{ forloop.counter }}" onclick="gtag('event', 'Call', {'send_to': 'UA-61179955-1','event_category': 'Phone Lead','event_label': 'Footer Phone - {{ shop.phone }}'});" ><span itemprop="telephone">{{ shop.phone }}</span></a></div>
+                            </div>
+                            {% endif %}
+                            {% if shop.working_hours  %}
+                            <div class="contacts__section">
+                                <svg id=" " class="contacts__ico svg-ico svg-ico_clock"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_clock"></use></svg>
+
+                                <div class="contacts__text">
+                                    <div class="work-time">
+                                        {{ shop.working_hours|linebreaksbr }}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    {% if page.slug == 'home' %}
+
+        <div class="contact-map map-multiply" data-address="[{% for shop in footer_shops_list %}[{{ shop.location_coordinates }}]{% if not forloop.last %}, {% endif %}{% endfor %}]"></div>
+    {% endif %}

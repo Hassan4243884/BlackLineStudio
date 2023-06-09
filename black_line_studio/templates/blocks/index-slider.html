@@ -1,0 +1,36 @@
+{% load wagtailimages_tags %}
+<div class="main-head">
+    <div class="top-group">
+        <div class="top-group__container">
+            {% image self.logo height-2000 as logo_image %}
+            <div class="top-group__image"><img src="" data-src="{{ logo_image.url }}" width="223" height="224" alt="" class="lozad"></div>
+
+            <div class="top-group__title">
+                <div class="head-titles">
+                    <div class="head-titles__title _middle">{{ self.first_line }}</div>
+                    <div class="head-titles__title _large">{{ self.second_line }}</div>
+                    <div class="head-titles__title _small text-white">{{ self.third_line }}</div>
+                </div>
+            </div>
+
+            <div class="top-group__buttons">
+                <div class="button-group">
+                    {% for shop in footer_shops_list %}
+                    <a href="{{ shop.get_url }}" class="btn btn_bordered"><span>{{ shop.title|default:shop.header }}</span></a>
+                    {% endfor %}
+                    <a class="btn btn_bordered" href="https://www.theblumz.com" target="_blank">Shop Now</a>
+                    <a class="btn btn_full btn_large" href="#contact">{{ self.cta_text }}</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-slider-wrapper">
+        <div class="main-slider">
+            {% for i in self.images %}
+                <div class="main-slider__slide" style="background-image: url({{ i.file.url }});"></div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

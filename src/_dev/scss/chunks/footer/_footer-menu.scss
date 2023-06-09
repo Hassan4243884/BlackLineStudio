@@ -1,0 +1,49 @@
+.footer-menu {
+  margin-bottom: rem-calc(12);
+  margin-left: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+
+  @include breakpoint(mobile up) {
+    text-align: left;
+  }
+
+  @include breakpoint(medium up) {
+    margin: 0;
+    text-align: right;
+  }
+
+  &__item {
+    @include ib;
+    margin-right: map-get($section-indents, small);
+    margin-left: map-get($section-indents, small);
+
+    @include breakpoint(mobile up) {
+      margin-right: map-get($section-indents, medium);
+      margin-left: 0;
+    }
+
+    @include breakpoint(medium up) {
+      margin-right: 0;
+      margin-left: map-get($section-indents, medium);
+    }
+  }
+
+  &__link {
+    transition: color $common-transition;
+    color: map-get($custom-palette, yellow);
+    font-size: rem-calc(14);
+    font-weight: 500;
+    line-height: 1.3;
+    text-transform: uppercase;
+
+    &:hover {
+      color: map-get($custom-palette, yellow_100);
+    }
+
+    &:focus {
+      color: map-get($custom-palette, yellow);
+    }
+  }
+}

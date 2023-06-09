@@ -1,0 +1,98 @@
+.form-section {
+  position: relative;
+  padding-top: rem-calc(20);
+
+  &.active {
+    .form-section__placeholder {
+      span {
+        margin-top: 0;
+      }
+    }
+
+    .form-section__field,
+    .form-section__select {
+      border-bottom: 2px map-get($custom-palette, yellow) solid;
+    }
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 17px;
+    overflow: hidden;
+    color: map-get($custom-palette, yellow);
+    font-size: rem-calc(14);
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+
+    span {
+      display: block;
+      margin-top: 100%;
+      transition: all .2s;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    height: 34px;
+    transition: border $common-transition;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px map-get($custom-palette, gray_700) solid;
+    border-left: 0;
+    background: none;
+    color: $white;
+    font-size: rem-calc(14);
+    @include placeholder-style($color: $white, $fweight: 700, $ttrans: uppercase, $opacity: 1);
+
+    &:focus {
+      outline: none;
+    }
+
+    &_comment {
+      height: 84px;
+    }
+
+    &.error {
+      border-bottom: 2px map-get($custom-palette, error) solid;
+    }
+  }
+
+  &__select {
+    width: 100%;
+    height: 34px;
+    transition: border $common-transition;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 2px map-get($custom-palette, gray_700) solid;
+    border-left: 0;
+    background: none;
+    color: $white;
+    font-size: rem-calc(14);
+    font-weight: 700;
+    text-transform: uppercase;
+
+    &:focus {
+      outline: none;
+    }
+
+    option {
+      color: $black;
+    }
+
+    &.error {
+      border-bottom: 2px map-get($custom-palette, error) solid;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    padding-top: rem-calc(30);
+    padding-bottom: rem-calc(30);
+    border-radius: 45px;
+    font-size: map-get($content-sizes, btn-form-size);
+  }
+}

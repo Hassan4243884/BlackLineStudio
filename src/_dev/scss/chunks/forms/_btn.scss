@@ -1,0 +1,104 @@
+$bordered-position: rem-calc(5);
+
+.btn {
+  position: relative;
+  @include ib;
+  min-width: 170px;
+  margin-bottom: rem-calc(16);
+  padding: map-get($btn-gutters, large) map-get($btn-gutters, large);
+  transition: background $common-transition, color $common-transition;
+  border-radius: $btn-radius;
+  background: map-get($custom-palette, yellow);
+  color: $white;
+  font-size: map-get($content-sizes, btn-size);
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    //background: darken(map-get($custom-palette, yellow), 20%);
+    color: $white;
+  }
+
+  &:focus {
+    outline: none;
+    //background: darken(map-get($custom-palette, yellow), 20%);
+    color: $white;
+  }
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  &_large {
+    min-width: 260px;
+  }
+
+  &_medium {
+    font-size: rem-calc(16);
+  }
+
+  &_dark {
+    background: map-get($custom-palette, blue_dark);
+
+    &:hover {
+      background: map-get($custom-palette, yellow);
+    }
+
+    .btn__ico {
+      fill: $white;
+    }
+  }
+
+  &__ico {
+    width: 32px;
+    height: 32px;
+    margin-right: map-get($section-indents, medium);
+  }
+
+  &_bordered {
+    border: 2px map-get($custom-palette, yellow) solid;
+    background: none;
+    //color: map-get($custom-palette, yellow);
+
+    &:hover {
+      //color: map-get($custom-palette, blue_dark);
+      background: map-get($custom-palette, yellow);
+
+      //&::after {
+      //  border-color: map-get($custom-palette, blue_dark);
+      //}
+    }
+
+    //&::after {
+    //  content: '';
+    //  position: absolute;
+    //  top: $bordered-position;
+    //  right: $bordered-position;
+    //  bottom: $bordered-position;
+    //  left: $bordered-position;
+    //  border: 2px map-get($custom-palette, yellow) solid;
+    //}
+  }
+
+  &_full {
+    width: 100%;
+  }
+
+  &_icon {
+    display: inline-flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &_close {
+    min-width: 10px;
+    padding-right: rem-calc(20);
+    padding-left: rem-calc(20);
+
+  }
+}

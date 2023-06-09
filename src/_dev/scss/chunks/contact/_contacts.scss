@@ -1,0 +1,68 @@
+.contacts {
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  padding: map-get($section-gutters, medium) rem-calc(20);
+  background-color: map-get($custom-palette, blue_dark_800);
+
+  @include breakpoint(mobile up) {
+    padding: map-get($section-gutters, medium) rem-calc(50);
+  }
+  
+  &_bg-transparent {
+    background: transparent;
+  }
+
+  &__section {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: map-get($section-indents, small);
+    color: $white;
+    font-size: rem-calc(14);
+  }
+
+  &__title {
+    position: relative;
+    margin-bottom: rem-calc(20);
+    color: $white;
+    font-size: rem-calc(20);
+    font-weight: 600;
+    line-height: 1.3;
+    
+    @include breakpoint(mobile up) {
+      padding-right: rem-calc(32);
+      font-size: rem-calc(24);
+    }
+  }
+
+  &__ico {
+    flex: 0 0 auto;
+    width: 25px;
+    height: 25px;
+    margin-right: rem-calc(10);
+    fill: map-get($custom-palette, yellow);
+  }
+
+  &__text {
+    flex: 1 1 0;
+    padding-top: rem-calc(3);
+
+    p {
+      margin-bottom: rem-calc(6);
+    }
+  }
+
+  &__link {
+    transition: color $common-transition;
+    color: map-get($custom-palette, yellow);
+    font-weight: 500;
+
+    &:hover {
+      color: map-get($custom-palette, yellow_100);
+    }
+
+    &:focus {
+      outline: none;
+      color: map-get($custom-palette, yellow);
+    }
+  }
+}

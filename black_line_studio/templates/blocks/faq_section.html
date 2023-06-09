@@ -1,0 +1,11 @@
+<div class="main-accordion">
+    {% for question in self.questions %}
+    <div class="main-accordion__section">
+        <button class="main-accordion__title js-ma-title">{{ question.question }}</button>
+
+        <div class="main-accordion__container">
+            {{ question.answer }}
+        </div>
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,29 @@
+{% load static wagtailimages_tags %}
+        <h2 class="section__title">{{ self.header  }}</h2>
+
+        <div class="slide-btn">
+            <div class="grid-container">
+                <div class="team-carousel js-artists">
+                    {% for artist in self.artists %}
+                    <div class="team-carousel__slide grayscale-wr">
+                        <a href="{{ artist.page.get_url }}" class="team-carousel__container inline-hover">
+                            <div class="team-carousel__image">
+                                {% image artist.photo fill-352x400 as tmp_photo %}
+                                <img src="" data-src="{{ tmp_photo.url }}" class="grayscale tns-lazy-img" width="353" height="400" alt="">
+                            </div>
+
+                            <div class="team-carousel__body">
+                                <div class="team-carousel__name">{{ artist.name }}</div>
+                                <div class="team-carousel__profession">{{ artist.title }}</div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% if self.cta_text and self.cta_page %}
+        <div class="grid-container text-center">
+            <a href="{{ self.cta_page.get_url }}" class="btn btn_large btn_bordered">{{ self.cta_text }}</a>
+        </div>
+        {% endif %}

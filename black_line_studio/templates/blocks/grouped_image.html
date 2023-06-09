@@ -1,0 +1,16 @@
+{% load wagtailimages_tags %}
+<div class="images-group">
+    <div class="images-group__col">
+        <div class="display-inline-block inline-hover">
+            {% image self.first_image fill-280x490 as tmp_photo %}
+            <img src="" data-src="{{ tmp_photo.url }}" class="lozad grayscale" height="490" width="280" alt="">
+        </div>
+    </div>
+
+    <div class="images-group__col">
+        <div class="display-inline-block image-bordered">
+            {% image self.second_image fill-280x490 as tmp_photo %}
+            <img src="" data-src="{{ tmp_photo.url }}" class="lozad " height="490" width="280" alt="">
+        </div>
+    </div>
+</div>

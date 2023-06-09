@@ -1,0 +1,22 @@
+.progress-carousel-wrapper {
+  .tns-controls {
+    display: none;
+  }
+}
+
+.progress-carousel {
+  padding-bottom: map-get($section-gutters, large);
+
+  @include breakpoint(960 up) {
+    padding-bottom: 0;
+  }
+
+  &._fix {
+    height: 0;
+    overflow: hidden;
+  }
+
+  &__slide {
+    text-align: center;
+  }
+}

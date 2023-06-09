@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags static %}
+
+{%  if category %}{% block robots %}<META NAME="ROBOTS" CONTENT="NOINDEX, FOLLOW"> {% endblock robots %}{% endif %}
+
+{% block content %}
+<div class="inner-banner lozad" data-background-image="{% static 'img/banners/inner_banner.jpg' %}">
+    <div class="inner-banner__container">
+        <div class="inner-banner__cell inner-banner__cell_l">
+            {% if category %}
+            <h1 class="inner-h-title">{{ category }}</h1>
+            {% elif tag %}
+            <h1 class="inner-h-title">Posts tagged with '{{ tag }}'</h1>
+            {% else %}
+            <h1 class="inner-h-title">Blog</h1>
+            {% endif %}
+        </div>
+
+{#        <div class="inner-banner__cell inner-banner__cell_r">#}
+{#            <a class="btn btn_medium btn_dark btn_bordered" href="#contact">Book an appointment</a>#}
+{#        </div>#}
+    </div>
+</div>
+
+
+
+    <div class="section bg-pattern _dark">
+
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x">
+            <div class="cell large-8 medium-7">
+
+                {% if blogs %}
+                    {% for blog in blogs %}
+                       {% include 'blog/blog_post.html' with include_context="index_page" %}
+                    {% endfor %}
+
+                    <nav aria-label="Pagination">
+                        <ul class="pagination articles-pagination text-center">
+                            {% if blogs.has_previous %}
+                                <li class="pagination-previous"><a aria-label="Previous page" href="?page={{ blogs.previous_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}"></a></li>
+                            {% else %}
+                                <li class="pagination-previous disabled"></li>
+                            {% endif %}
+{#                            {% for page in blogs.paginator.page_range %}#}
+{#                                <li><a href="?page={{ page }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}" aria-label="Page {{ page }}">{{ page }}</a></li>#}
+                                <li> Page {{ blogs.number }}  of  {{ blogs.paginator.num_pages }}</li>
+{#                            {% endfor %}#}
+                            {% if blogs.has_next %}
+                                <li class="pagination-next"><a aria-label="Next page" href="?page={{ blogs.next_page_number }}{% for key,value in request.GET.items %}{% ifnotequal key 'page' %}&amp;{{ key }}={{ value }}{% endifnotequal %}{% endfor %}"></a></li>
+                            {% else %}
+                                <li class="pagination-next disabled"></li>
+                            {% endif %}
+
+
+{#                            <li class="pagination-previous disabled"></li>#}
+{#                            <li class="current">1</li>#}
+{#                            <li><a href="#" aria-label="Page 2">2</a></li>#}
+{#                            <li><a href="#" aria-label="Page 3">3</a></li>#}
+{#                            <li><a href="#" aria-label="Page 4">4</a></li>#}
+{#                            <li class="ellipsis" aria-hidden="true"></li>#}
+{#                            <li class="pagination-next"><a href="#" aria-label="Next page"></a></li>#}
+                        </ul>
+                    </nav>
+
+                {% else %}
+                    <p>There are currently no blog posts</p>
+                {% endif %}
+
+
+            </div>
+
+            {% include 'includes/blog_sidebar.html' %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

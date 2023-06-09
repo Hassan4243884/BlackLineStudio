@@ -1,0 +1,18 @@
+{% load static wagtailcore_tags %}
+<section class="section bg-pattern {% if self.bg_position == 'top-left' %}_bg-center-left-4{% elif self.bg_position == 'center'%}_bg-center{% endif %} {{ self.bg_color }} lozad" {% if self.background %}data-background-image="{{ self.background.file.url }}"{% endif %}>
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            {% with self.left_part|first as block %}
+            <div class="cell medium-6 {% if block.block_type == 'text_block' or block.block_type == 'square_content_image_slider' %}text-center medium-text-left{% endif %}">
+                {% include_block block %}
+            </div>
+            {% endwith %}
+
+            {% with self.right_part|first as block %}
+            <div class="cell medium-6 {% if block.block_type == 'text_block' %}text-center medium-text-left{% endif %}">
+                {% include_block block %}
+            </div>
+            {% endwith %}
+        </div>
+    </div>
+</section>

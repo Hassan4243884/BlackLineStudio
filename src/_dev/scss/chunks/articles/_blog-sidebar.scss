@@ -1,0 +1,18 @@
+.blog-sidebar {
+  &__container {
+    margin-bottom: rem-calc(32);
+    padding: rem-calc(32);
+    background: map-get($custom-palette, blue_dark_800);
+    font-size: rem-calc(24);
+  }
+
+  &__title {
+    margin-bottom: rem-calc(16);
+    color: $white;
+    font-size: rem-calc(24);
+    font-weight: 700;
+    line-height: 1;
+  }
+}
+
+

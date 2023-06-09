@@ -1,0 +1,187 @@
+---
+layout: base_inner
+meta:
+    title: ""
+    description: ""
+menu:
+    id: "team"
+
+top-title: 'Team'
+pre-footer: true
+---
+
+<section class="section bg-pattern _bg-center _dark-800 lozad" data-background-image="{{ site.app.url }}img/bg/dragon.png">
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="cell medium-6 text-center medium-text-left">
+                <h2 class="section__title _left no-x-butter">Toronto Best Tattoo Artists</h2>
+
+                <div class="wysiwyg text-white spoiler-container spoiler-container_for-mobile">
+                    <p>Your ink will be on your skin for life. Obviously, you’ll want to think long and hard about the piece before you take the next step. You want to be sure that you’re getting a piece you can live with, happily, for decades to come—a piece that isn’t going to send you running for a cover-up tattoo in a few years. Despite spending hours on social media looking at images of tattoos in Toronto, meticulously looking for the right one, you may not seem to put the same effort and research into finding the right tattoo artist. Regardless of the piece, you decide on, your tattoo artist in Toronto can ultimately make or break it. Having a great artist will only enhance your piece.</p>
+
+                    <p>Here at Black Line Studio, each of our tattoo artists are well-versed in a unique style. We highly recommend booking a complimentary consultation between you and the artist; during the appointment, you and the artist will fine tune the piece for the size and location that you are after while explaining any
+                        flaws in the design and suggesting alternatives...</p>
+
+                    <a href="#info" class="btn btn_bordered">Read More</a>
+                </div>
+            </div>
+
+            <div class="cell medium-6">
+                <div class="art-slider-wrapper">
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper art-slider">
+                            <div class="art-slider__slide swiper-slide">
+                                <div class="art-slider__ib inline-hover grayscale-wr">
+                                    <picture>
+                                        <img src="{{ site.app.url }}img/slides/art_slide1_288x534.jpg" class="grayscale" alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="art-slider__slide swiper-slide">
+                                <div class="art-slider__ib inline-hover grayscale-wr">
+                                    <picture>
+                                        <img src="{{ site.app.url }}img/slides/art_slide2_288x534.jpg" class="grayscale" alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="art-slider__slide swiper-slide">
+                                <div class="art-slider__ib inline-hover grayscale-wr">
+                                    <picture>
+                                        <img src="{{ site.app.url }}img/slides/art_slide1_288x534.jpg" class="grayscale" alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="art-slider__slide swiper-slide">
+                                <div class="art-slider__ib inline-hover grayscale-wr">
+                                    <picture>
+                                        <img src="{{ site.app.url }}img/slides/art_slide2_288x534.jpg" class="grayscale" alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="art-slider__slide swiper-slide">
+                                <div class="art-slider__ib inline-hover grayscale-wr">
+                                    <picture>
+                                        <img src="{{ site.app.url }}img/slides/art_slide1_288x534.jpg" class="grayscale" alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                            <div class="art-slider__slide swiper-slide">
+                                <div class="art-slider__ib inline-hover grayscale-wr">
+                                    <picture>
+                                        <img src="{{ site.app.url }}img/slides/art_slide2_288x534.jpg" class="grayscale" alt="">
+                                    </picture>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section team bg-pattern _bg-center _dark lozad" data-background-image="{{ site.app.url }}img/bg/flower_bg.png">
+    <div class="section__btm-indent-1">
+        <h2 class="section__title">Artists CF Shops At Don Mills</h2>
+
+        <div class="slide-btn slide-btn_show-dots">
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="cell">
+                        <div class="team-carousel js-artists js-don-mills">
+                            {% for item_dm in site.data.team.don-mills %}
+                            <div class="team-carousel__slide grayscale-wr">
+                                <a href="{{ item_dm.link }}" class="master inline-hover">
+                                    <div class="master__image">
+                                        <img src="{{ site.app.url }}img/artists/{{ item_dm.photo }}" class="grayscale" alt="">
+                                    </div>
+
+                                    <div class="master__body">
+                                        <div class="master__name">{{ item_dm.name }}</div>
+                                        <div class="master__profession">{{ item_dm.post }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section__btm-indent-1">
+        <h2 class="section__title">Artists 573 King West</h2>
+
+        <div class="slide-btn slide-btn_show-dots">
+            <div class="grid-container">
+                <div class="grid-x">
+                    <div class="cell">
+                        <div class="team-carousel js-artists js-king-west">
+                            {% for item_dm in site.data.team.king-west %}
+                            <div class="team-carousel__slide grayscale-wr">
+                                <a href="{{ item_dm.link }}" class="master inline-hover">
+                                    <div class="master__image">
+                                        <img src="{{ site.app.url }}img/artists/{{ item_dm.photo }}" class="grayscale" alt="">
+                                    </div>
+
+                                    <div class="master__body">
+                                        <div class="master__name">{{ item_dm.name }}</div>
+                                        <div class="master__profession">{{ item_dm.post }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section _dark-800 js-anchor-section" id="info">
+    <h2 class="section__title _left">Information</h2>
+
+    <div class="grid-container">
+        <div class="grid-x">
+            <div class="cell large-24">
+                <div class="main-tabs">
+                    <div class="main-tabs__header">
+                        <button data-tab="content-1" class="main-tabs__title js-tab-btn active">How To Choose A Tattoo Artist In Toronto</button>
+                        <button data-tab="content-2" class="main-tabs__title js-tab-btn">Research Your Toronto Tattoo Artist</button>
+                        <button data-tab="content-3" class="main-tabs__title js-tab-btn">Visit Your Tattoo Artist at The Shop</button>
+                    </div>
+
+                    <div class="main-tabs__body">
+                        <div class="main-tabs__section js-info-accorfion-section active" id="content-1">
+                            <h3 class="accordion-title js-accordion-btn">How To Choose A Tattoo Artist In Toronto</h3>
+
+                            <div class="main-tabs__container accordion__container">
+                                <p>(continued…)Here at Black Line Studio, each of our tattoo artists are well-versed in a unique style. We highly recommend booking a complimentary consultation between you and the artist; during the appointment, you and the artist will fine tune the piece for the size and location that you are after while explaining any flaws in the design and suggesting alternatives. They can tweak the colouring to play better with your skin tone or give you ideas that you may not have thought of on your own. But, having a not-so- great artist can do damage beyond repair. Blurred edges, shoddy line work, and unsaturated coloring can ruin even the most kick-ass of pieces. Finding the artist that suits your needs is vital to having a tattoo you can be proud of. But, what steps should you take in order to find such an artist?</p>
+                            </div>
+                        </div>
+
+                        <div class="main-tabs__section js-info-accorfion-section" id="content-2">
+                            <h3 class="accordion-title js-accordion-btn">Research Your Toronto Tattoo Artist</h3>
+
+                            <div class="main-tabs__container accordion__container">
+                                <p>This is the first and foremost important step in finding your artist. Ask around. If you see ink you like while you’re at the grocery store, stop and ask the person where they got it and who their artist was. Check online reviews, comb through shop websites. There are plenty of online tattoo forums where you can ask for input from other inked individuals. Here at Black Line Studio, we welcome e-mails or phone calls to help answer all your tattoo questions. When it comes to the tattoo industry, most clients are more than eager to boast about their work and their experience. If the shop is dirty, rude, or spills out shoddy work, you can bet you’ll find it online, too.</p>
+                            </div>
+                        </div>
+
+                        <div class="main-tabs__section js-info-accorfion-section" id="content-3">
+                            <h3 class="accordion-title js-accordion-btn">Visit Your Tattoo Artist at The Shop</h3>
+
+                            <div class="main-tabs__container accordion__container">
+                                <p>An important aspect of selecting an artist is to do the legwork…meaning, get up and go visit the shop. Checking out shops for yourself is the only way to get a true picture of what you’re dealing with. Sure, you can read the online reviews, but let’s face it…those raving, shining reviews are great, but you don’t know who’s actually reviewing them. Is it a family member, girlfriend, or group of friends? Physically walking into the shops, unannounced, lets you get a glimpse into how their business operates. You can see firsthand if the shop is sterile and clean. Do you see bottles of green soap or sanitizer? Are they using fresh needles for every piece? In addition to the cleanliness, what’s the environment like? It is important to be comfortable there, as you’ll most likely be in an awkward position and quite uncomfortable for some time. If you already feel off, you’re not going to want to be in that situation for an extended amount of time. Even if you like the first <a href="https://blacklinestudios.ca/toronto-custom-tattoos/">tattoo shop</a> you walk into, don’t jump just yet. Check around, visit a few. Check out portfolios and find an artist that you’re comfortable with.</p>                            <p>All our artists’ work is featured on our website and on our Instagram account to help with the research. Spend some time getting to know the artist before you decide.You need to be able to trust your tattoo artist and should choose one who has worked heavily in the category of tattoo you’re looking to get. Finding the right artist, one whose personality and tattooing style matches what you’re looking for, is a vitally important part of getting a tattoo. Taking the time to do the research and legwork may seem like a hassle, but trust me, it’s integral in the process of getting a really great tattoo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

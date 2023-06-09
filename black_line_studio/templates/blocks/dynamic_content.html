@@ -1,0 +1,4 @@
+{% load static wagtailcore_tags %}
+<section class="section {{ self.bg_color }} {{ self.bg_position }} {{ self.bg_pattern }} {{ self.bg_repeat }} {{ self.additional_classes }} lozad" {% if self.background %}data-background-image="{{ self.background.file.url }}"{% endif %}>
+    {% include_block self.body %}
+</section>

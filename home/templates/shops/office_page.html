@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block content %}
+<div class="contact-info bg-pattern lozad" data-background-image="{% static 'img/bg/customers_bg.jpg' %}">
+    <div class="inner-banner inner-banner_team">
+        <div class="inner-banner__container">
+            <div class="inner-banner__cell inner-banner__cell_l">
+                <h1 class="inner-h-title">{{ page.header|default:page.title }}</h1>
+            </div>
+
+            <div class="inner-banner__cell inner-banner__cell_r">
+                <a class="btn btn_medium btn_dark btn_bordered" href="#contact">Book an appointment</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container index-1">
+        <div class="grid-x grid-padding-x text-white align-justify">
+            <div class="cell large-6 medium-6">
+                <div class="wysiwyg">
+                    {% include_block page.body %}
+                </div>
+
+                <div class="contacts contacts_bg-transparent">
+                    <div class="contacts__section">
+                        <svg id=" " class="contacts__ico svg-ico svg-ico_placeholder"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_placeholder"></use></svg>
+
+                        <div class="contacts__text">
+                            Black Line Studio<br/>
+                            {{ page.address|safe|linebreaksbr }}
+                        </div>
+                    </div>
+                    {% if page.email %}
+                    <div class="contacts__section">
+                        <svg id=" " class="contacts__ico svg-ico svg-ico_envelope"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_envelope"></use></svg>
+                        <div class="contacts__text"><a href="mailto:{{ page.email }}" class="contacts__link"  onclick="gtag('event', 'click to email', {'send_to': 'UA-61179955-1','event_category': 'Email','event_label': 'Downtow Page Email'});">Email Us</a></div>
+                    </div>
+                    {% endif %}
+                    {% if page.phone %}
+                    <div class="contacts__section">
+                        <svg id=" " class="contacts__ico svg-ico svg-ico_phone-call"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_phone-call"></use></svg>
+                        <div class="contacts__text"><a href="tel:{{ page.phone }}"  class="contacts__link icm_ct_phone"
+                                                       onclick="gtag('event', 'Call', {'send_to': 'UA-61179955-1','event_category': 'Phone Lead','event_label': 'Contact Us Phone - {{ page.phone }}'});">
+                            {{ page.phone }}</a></div>
+                    </div>
+                    {% endif %}
+                    {% if page.working_hours  %}
+                    <div class="contacts__section">
+                        <svg id=" " class="contacts__ico svg-ico svg-ico_clock"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_clock"></use></svg>
+
+                        <div class="contacts__text">
+                            <div class="work-time">
+                                {{ page.working_hours|linebreaksbr }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="cell large-6 medium-6 text-center">
+                {% image page.image fill-544x411 as contact_image  %}
+                <div class="image-bordered"><img src="" data-src="{{ contact_image.url }}" class="lozad" alt=""></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% include_block page.additional_body %}
+<div class="contact-map" data-address="[[{{ page.location_coordinates }}]]"></div>
+{% endblock %}

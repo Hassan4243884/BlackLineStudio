@@ -1,0 +1,25 @@
+[
+ {
+ icon: 'reviv_vitamin_drip.png',
+ title: 'Cleansing:',
+ content: 'The liquid carbon material applied during the start of your procedure absorbs oil and impurities from deep within the pores. When the laser targets
+           and destroys the carbon particles, the absorbed material goes with it.'
+ },
+ {
+ icon: 'hollywood_face_peel.png',
+ title: 'Rejuvenating:',
+ content: 'Carbon peels penetrate the deep layers of the skin to stimulate collagen production, which results in firmer, plumper, more radiant skin and a reduction of fine lines.'
+ },
+ {
+ icon: 'tattoo_removal_icon.png',
+ title: 'Exfoliating:',
+ content: 'The laser is highly attracted to the carbon substance. When it passes along the treatment area, it exfoliates while removing dead skin cells and blackheads. The result is smoother, glowing skin with reduced pore size and an improved,
+           even skin tone.'
+ },
+ {
+ icon: 'old_destroying_icon.png',
+ title: 'Acne and Oil Destroying:',
+ content: 'The heat omitted by the laser during the carbon peel reduces the bacteria responsible for acne, allowing for improved control of pimples and outbreaks. The heat also shrinks the sebaceous glands, reducing oil production and congestion
+           in the pores.'
+ },
+]

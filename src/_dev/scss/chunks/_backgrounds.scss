@@ -1,0 +1,43 @@
+.bg-pattern {
+  background-repeat: no-repeat;
+
+  &._bg-center {
+    background-position: center center;
+  }
+
+  &._bg-center-left {
+    background-position: center left;
+  }
+
+  &._bg-center-left-4 {
+    background-position: 15% center;
+  }
+
+  &._bg-center-right-4 {
+    background-position: 85% center;
+  }
+
+  &._bg-center-bottom-9 {
+    background-position: center 90%;
+  }
+
+  &._bg-center-right {
+    background-position: center right;
+  }
+
+  &._bg-center-bottom {
+    background-position: center bottom;
+  }
+
+  &._bg-center-top {
+    background-position: center top;
+  }
+
+  &._bg-top-left {
+    background-position: top left;
+  }
+
+  &._bg-repeat-y {
+    background-repeat: repeat-y;
+  }
+}

@@ -1,0 +1,52 @@
+.body-piercing {
+
+  &__col {
+    margin-bottom: map-get($grid-column-gutter, small);
+
+    @include breakpoint(medium up) {
+      margin-bottom: map-get($grid-column-gutter, medium);
+    }
+
+    &._hidden{
+      display: none;
+    }
+  }
+
+  &__img {
+    img {
+      width: 100%;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: rem-calc(6 12);
+    background: $black;
+    color: $white;
+    font-size: rem-calc(14);
+    font-weight: 700;
+    line-height: 25px;
+    text-align: center;
+    text-transform: uppercase;
+
+    @include breakpoint(mobile up) {
+      font-size: rem-calc(15);
+      line-height: 46px;
+    }
+
+    @include breakpoint(medium up) {
+      font-size: rem-calc(18);
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__title {
+    @include ib;
+    line-height: 1;
+  }
+}
+
+

@@ -1,0 +1,15 @@
+.services-ico {
+  width: 100px;
+  height: 100px;
+  fill: none;
+
+  path {
+    fill: none;
+    stroke: map-get($custom-palette, yellow);
+    stroke-width: 3px;
+  }
+
+  line {
+    fill: map-get($custom-palette, yellow);
+  }
+}

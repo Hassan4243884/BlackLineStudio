@@ -1,0 +1,7 @@
+.button-group {
+  .btn {
+    @include breakpoint(mobile down) {
+      min-width: 140px;
+    }
+  }
+}

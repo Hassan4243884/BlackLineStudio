@@ -1,0 +1,231 @@
+$ih-inner-start-indent: rem-calc(-3);
+$ih-inner-indent: rem-calc(5);
+
+$zh-inner-start-indent: rem-calc(-3);
+$zh-inner-before-indent: rem-calc(5);
+$zh-inner-after-indent: rem-calc(62);
+
+.inline-hover {
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+
+    &::after {
+      top: $ih-inner-indent;
+      right: $ih-inner-indent;
+      bottom: $ih-inner-indent;
+      left: $ih-inner-indent;
+    }
+  }
+
+  &::before,
+  &::after {
+    pointer-events: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity $common-transition;
+    border: 5px rgba($black, .8) solid;
+    opacity: 0;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: $ih-inner-start-indent;
+    right: $ih-inner-start-indent;
+    bottom: $ih-inner-start-indent;
+    left: $ih-inner-start-indent;
+    transition: top .2s ease, right .2s ease, bottom .2s ease, left .2s ease;
+    border: 2px map-get($custom-palette, yellow) solid;
+  }
+}
+
+.zoom-hover {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    &::before {
+      top: $zh-inner-before-indent;
+      right: $zh-inner-before-indent;
+      bottom: $zh-inner-before-indent;
+      left: $zh-inner-before-indent;
+    }
+
+    &::after {
+      top: $zh-inner-after-indent;
+      right: $zh-inner-after-indent;
+      bottom: $zh-inner-after-indent;
+      left: $zh-inner-after-indent;
+    }
+
+    .zoom-hover__ico {
+      opacity: 1;
+    }
+  }
+
+  &::before,
+  &::after {
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: $ih-inner-start-indent;
+    right: $ih-inner-start-indent;
+    bottom: $ih-inner-start-indent;
+    left: $ih-inner-start-indent;
+    transition: top .2s ease, right .2s ease, bottom .2s ease, left .2s ease;
+    border: 2px map-get($custom-palette, yellow) solid;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: $ih-inner-start-indent;
+    right: $ih-inner-start-indent;
+    bottom: $ih-inner-start-indent;
+    left: $ih-inner-start-indent;
+    transition: top .2s ease, right .2s ease, bottom .2s ease, left .2s ease;
+    border: 2px map-get($custom-palette, yellow) solid;
+  }
+
+  &__ico {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    margin-top: rem-calc(-11);
+    margin-left: rem-calc(-11);
+    transition: opacity .5s;
+    opacity: 0;
+    fill: map-get($custom-palette, yellow);
+  }
+}
+
+.one-line-hover {
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    &::after {
+      top: $ih-inner-indent;
+      right: $ih-inner-indent;
+      bottom: $ih-inner-indent;
+      left: $ih-inner-indent;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: $ih-inner-start-indent;
+    right: $ih-inner-start-indent;
+    bottom: $ih-inner-start-indent;
+    left: $ih-inner-start-indent;
+    transition: top .2s ease, right .2s ease, bottom .2s ease, left .2s ease;
+    border: 2px map-get($custom-palette, yellow) solid;
+    pointer-events: none;
+
+    @include breakpoint(480 down) {
+      top: $ih-inner-indent;
+      right: $ih-inner-indent;
+      bottom: $ih-inner-indent;
+      left: $ih-inner-indent;
+    }
+  }
+}
+
+.image-bordered {
+  display: inline-block;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity $common-transition;
+    border: 5px rgba($black, .8) solid;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: $ih-inner-indent;
+    right: $ih-inner-indent;
+    bottom: $ih-inner-indent;
+    left: $ih-inner-indent;
+    transition: top .2s ease, right .2s ease, bottom .2s ease, left .2s ease;
+    border: 2px map-get($custom-palette, yellow) solid;
+  }
+}
+
+.grayscale {
+  transition: all $common-transition;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+
+  &.active {
+    filter: grayscale(0);
+  }
+
+  &:hover {
+    filter: grayscale(0);
+  }
+}
+
+.grayscale-wr {
+
+  .grayscale-fix {
+    display: block !important;
+
+    svg {
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &.active {
+    svg {
+      opacity: 0;
+    }
+  }
+
+  &:hover {
+    .grayscale {
+      filter: grayscale(0);
+      visibility: visible !important;
+    }
+  }
+}
+
+.grayscale-wr.active .grayscale {
+  filter: grayscale(0);
+  visibility: visible !important;
+
+  @include breakpoint(mobile down) {
+    filter: grayscale(0);
+  }
+}
+
+

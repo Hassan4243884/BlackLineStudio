@@ -1,0 +1,85 @@
+---
+layout: base_inner
+meta:
+    title: ""
+    description: ""
+menu:
+    id: "services"
+
+top-title: 'Body Piercings'
+pre-footer: true
+---
+
+<section class="section bg-pattern _dark-800 lozad" data-background-image="{{ site.app.url }}img/bg/background2.png">
+    <div class="grid-container">
+        <div class="grid-x grid-padding-x align-justify">
+            <div class="cell medium-6 text-white wysiwyg">
+                <h2>Body Piercings</h2>
+
+                <p>Black Line Studio is proud to be <strong>“Toronto’s Best Piercing</strong>, <a href="#">Best Tattoo Artist</a>,
+                    <strong>and</strong> <a href="#">Best Tattoo Studio</a>,<strong>” as nominated by NOW Magazine! Black Line Studio</strong>. (We do not do genital piercings)</p>
+
+                <p>We offer one of the largest selections of body jewelry in Ontario in various nickel-free metals such as LVM surgical Steel, titanium, Bioplast and 14 karat yellow and white gold. </p>
+
+                <p>Our piercers are ranked number one in Toronto, come with a wealth of training and experience and take a custom approach to piercing by consulting each client through the process and working with them to determine the ideal jewelry style, size and placement for all piercings.</p>
+
+                <p>We work with single use needles to ensure an impeccably sterile and hygienic service and environment, exceeding the satisfaction of Toronto Public Health Guidelines. Because we use needles, the piercing process allows for the skin tissue to be pierced gently, without damaging the surrounding area. Whether piercing the ear, mouth, face of body, each procedure demonstrates our vigilant commitment to both safety and client satisfaction.</p>
+
+                <p>Get your ear, mouth, face or body piercing at Black Line Studio, Toronto with comfort and confidence, knowing that our method is the leading the industry standard.</p>
+
+                <p>Contact Black Line Studio at Info@blacklinestudios.ca to book your appointment for any piercing on the ear, mouth, face or body and get the best piercing in Toronto – we look forward to seeing you at the studio!</p>
+            </div>
+
+            <div class="cell medium-6 text-center">
+                <div class="images-group images-group_invert">
+                    <div class="images-group__col">
+                        <div class="display-inline-block inline-hover">
+                            <img src="" data-src="{{ site.app.url }}img/slides/bp_slide3.jpg" class="lozad grayscale" alt="">
+                        </div>
+                    </div>
+
+                    <div class="images-group__col">
+                        <div class="display-inline-block inline-hover">
+                            <img src="" data-src="{{ site.app.url }}img/slides/art_slide2_288x534.jpg" class="lozad grayscale" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-pattern _dark">
+    <h2 class="section__title">Piercing Services</h2>
+
+    <div class="grid-container">
+        <div class="grid-x align-center">
+            <div class="cell large-5 text-center text-white wysiwyg">
+                <p>At Black Line Studio, Toronto, we offer a full range of piercing services,
+                    below are some of the most popular areas and placements.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-container text-center">
+        <div class="grid-x grid-margin-x body-piercing">
+            {% for item in site.data.services.piercing-services %}
+                <div class="cell large-3 medium-4 small-6 body-piercing__col inline-hover">
+                    <a href="#" class="body-piercing__img">
+                        <img src="{{ site.app.url }}img/placeholder1.png" data-src="{{ site.app.url }}img/services/{{ item.img }}" class="lozad" alt="">
+                    </a>
+
+                    <a href="#" class="body-piercing__link">
+                        <span class="body-piercing__title">{{ item.title }}</span>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+        <button class="btn btn_bordered">See More</button>
+    </div>
+</section>
+
+{% include gallery.html gallery-title="Our Latest Instagram Posts" %}
+
+

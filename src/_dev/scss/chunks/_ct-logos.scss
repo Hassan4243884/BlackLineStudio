@@ -1,0 +1,74 @@
+.ct-logos {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: map_get($section-indents, small);
+  padding-left: 0;
+  color: $white;
+  font-size: rem-calc(18);
+  font-weight: 700;
+  line-height: 1;
+
+  @include breakpoint(560 up) {
+    justify-content: flex-start;
+    margin-top: map_get($section-indents, large);
+    padding-left: rem-calc(32);
+    font-size: rem-calc(16);
+  }
+
+  &__titles {
+    flex: 0 0 auto;
+    width: auto;
+    text-align: center;
+
+    @include breakpoint(560 up) {
+      text-align: left;
+    }
+  }
+
+  &__img {
+    flex: 1 1 100%;
+    width: 100%;
+    padding-top: rem-calc(12);
+    padding-bottom: rem-calc(7);
+    padding-left: 0;
+    text-align: center;
+
+    @include breakpoint(560 up) {
+      flex: 1 1 0;
+      width: auto;
+      padding-top: 0;
+      padding-left: rem-calc(20);
+      text-align: left;
+    }
+  }
+}
+
+.ct-title {
+  position: relative;
+  width: 100%;
+  min-width: 190px;
+  margin-bottom: 0;
+  padding-right: rem-calc(15);
+
+  @include breakpoint(560 up) {
+    min-width: 165px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 6px;
+    height: 6px;
+    margin-top: rem-calc(-3);
+    border-radius: 100px;
+    background: $white;
+  }
+}
+
+
+
+

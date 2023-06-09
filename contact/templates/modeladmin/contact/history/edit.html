@@ -1,0 +1,52 @@
+{% extends "wagtailadmin/base.html" %}
+{% load i18n %}
+
+{% block titletag %}{{ view.page_title }} {{ view.get_page_subtitle }}{% endblock %}
+
+{% block content %}
+
+    {% include "wagtailadmin/shared/header.html" with title=view.page_title subtitle=view.get_page_subtitle icon=view.header_icon %}
+
+    <div class="nice-padding">
+
+<table>
+    <tr>
+      <td>Form:</td><td>{{ instance.form }}</td>
+    </tr>
+    <tr>
+      <td>IP Address:</td><td>{{ instance.ip }}</td>
+    </tr>
+    <tr>
+      <td>Received:</td><td>{{ instance.created }}</td>
+    </tr>
+    {% if instance.file %}
+    <tr>
+      <td>Generated Document:</td><td><a href="{{ original.file.url }}" target="_blank">View file</a></td>
+    </tr>
+    {% endif %}
+    {% for f in instance.get_data %}
+    <tr>
+      <td style="width:300px; padding-right:20px;">{{ f.0 }}</td><td style="max-widtd:50%">{{ f.1 }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+            </br>
+        <a href="{% url 'resend_form' history_id=instance.id %}" class="button button-small button-secondary" title="Resend this form history">Resend</a>
+
+    </div>
+{% endblock %}
+
+{% block extra_js %}
+    {{ block.super }}
+    {{ form.media.js }}
+{% endblock %}
+
+{% block extra_css %}
+    {{ block.super }}
+    {{ form.media.css }}
+{% endblock %}
+
+
+
+
+

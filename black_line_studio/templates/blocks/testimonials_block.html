@@ -1,0 +1,32 @@
+{% load static %}
+<section class="section testimonials-wrapper bg-pattern _bg-center lozad" data-background-image="{% static 'img/bg/customers_bg.jpg' %}">
+    <div class="index-1">
+        <h2 class="section__title">{{ self.header }}</h2>
+
+        <div class="slide-btn">
+            <div class="grid-container">
+                <div class="grid-x align-center">
+                    <div class="cell medium-8 small-12">
+                        <div class="testimonials">
+                            {% for testimonial in self.testimonials %}
+                            <div class="testimonials__slide text-center">
+                                <p>{{ testimonial.text }}</p>
+
+                                <ul class="stars">
+                                        {% with ''|center:testimonial.rating as range %}
+                                        {% for _ in range %}
+                                            <li class="stars__item"><svg id=" " class="stars__ico svg-ico svg-ico_christmas-star"><use xlink:href="{% static 'img/sprite.svg' %}#svg-ico_christmas-star"></use></svg></li>
+                                        {% endfor %}
+                                        {% endwith %}
+                                </ul>
+
+                                <div class="testimonials__name">{{ testimonial.name }}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

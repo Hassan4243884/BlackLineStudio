@@ -1,0 +1,8 @@
+{% load menu_tags %}
+<div class="off-canvas__sidebar">
+    <div class="close-section">
+        <button class="btn btn_close close-button">x</button>
+    </div>
+
+    {% main_menu max_levels=2 template="menus/mobile_menu.html" %}
+</div>

@@ -1,0 +1,32 @@
+.services-carousel {
+  padding-bottom: map-get($section-gutters, medium);
+
+  &__slide {
+    opacity: 0;
+
+    @include breakpoint(mobile down) {
+      height: auto !important;
+    }
+
+    &.tns-slide-active {
+      opacity: 1;
+
+      .services-carousel__container {
+        background: map-get($custom-palette, blue_dark);
+      }
+    }
+
+    .services-section {
+      @include breakpoint(mobile down) {
+        padding-right: rem-calc(40);
+        padding-left: rem-calc(40);
+      }
+
+      p {
+        @include breakpoint(mobile down) {
+          font-size: rem-calc(14);
+        }
+      }
+    }
+  }
+}

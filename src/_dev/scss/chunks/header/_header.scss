@@ -1,0 +1,102 @@
+$header-gutter-y: rem-calc(18);
+
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: rem-calc(2);
+  padding-bottom: rem-calc(2);
+  transition: background $common-transition, padding $common-transition ease-out;
+  border-bottom: 1px rgba($white, .1) solid;
+
+  @include breakpoint(979 up) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  &__container {
+    max-width: $global-width;
+    margin: 0 auto;
+    padding-right: map-get($grid-column-gutter, small) / 3;
+    padding-left: map-get($grid-column-gutter, small) / 3;
+
+    @include breakpoint(medium up) {
+      padding-right: map-get($grid-column-gutter, small);
+      padding-left: map-get($grid-column-gutter, small);
+    }
+  }
+
+  &__row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-right: - map-get($grid-column-gutter, small) / 3;
+    margin-left: - map-get($grid-column-gutter, small) / 3;
+
+    @include breakpoint(medium up) {
+      margin-right: - map-get($grid-column-gutter, small);
+      margin-left: - map-get($grid-column-gutter, small);
+    }
+  }
+
+  &__col {
+    padding-right: map-get($grid-column-gutter, small) / 3;
+    padding-left: map-get($grid-column-gutter, small) / 3;
+
+    @include breakpoint(medium up) {
+      padding-right: map-get($grid-column-gutter, small);
+      padding-left: map-get($grid-column-gutter, small);
+    }
+  }
+
+  &__logo {
+    flex: 0 0 auto;
+
+    &.hide {
+      img {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    img {
+      width: 70px;
+      transition: opacity $common-transition ease;
+
+      @include breakpoint(mobile up) {
+        width: auto;
+      }
+    }
+  }
+
+  &__nav {
+    flex: 1 1 0;
+  }
+
+  &__phone {
+    flex: 0 0 auto;
+  }
+
+  &__mobile-nav {
+    display: flex;
+    flex: 0 0 auto;
+
+    @include breakpoint(980 up) {
+      display: none;
+    }
+  }
+
+  &.is-stuck {
+    background: rgba($black, .9);
+
+    .h-menu__link {
+      padding: rem-calc(32 10);
+
+      &::before {
+        top: rem-calc(33) !important;
+      }
+    }
+  }
+}

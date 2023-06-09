@@ -1,0 +1,148 @@
+.slide-btn {
+  position: relative;
+
+  .tns-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    margin-top: rem-calc(-20);
+
+    @include breakpoint(800 up) {
+      margin-top: rem-calc(-32);
+    }
+
+    button[data-controls] {
+      display: flex;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      //width: 40px;
+      //height: 40px;
+      transition: background .5s;
+      border: 2px map-get($custom-palette, yellow) solid;
+      border-radius: 1000px;
+      background: map-get($custom-palette, yellow);
+
+      @include breakpoint(mobile up) {
+        background: none;
+      }
+
+      //@include breakpoint(800 up) {
+      //  width: 64px;
+      //  height: 64px;
+      //}
+
+      &:hover {
+        background: lighten(map-get($custom-palette, yellow), 10%);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        position: relative;
+        width: 14px;
+        height: 14px;
+        border-bottom: 2px $white solid;
+      }
+    }
+
+    button[data-controls="prev"] {
+      left: rem-calc(-15);
+      border-radius: 0 1000px 1000px 0;
+
+      @include breakpoint(mobile up) {
+        left: rem-calc(4);
+        border-radius: 1000px;
+      }
+
+      @include breakpoint(800 up) {
+        left: $slide-buttons-indent;
+      }
+
+      &::before {
+        margin-left: rem-calc(5);
+        transform: rotate(45deg);
+        border-left: 2px $white solid;
+      }
+    }
+
+    button[data-controls="next"] {
+      right: rem-calc(-15);
+      border-radius: 1000px 0 0 1000px;
+
+      @include breakpoint(mobile up) {
+        right: rem-calc(4);
+        border-radius: 1000px;
+      }
+
+      @include breakpoint(800 up) {
+        right: $slide-buttons-indent;
+      }
+
+      &::before {
+        margin-right: rem-calc(5);
+        transform: rotate(-45deg);
+        border-right: 2px $white solid;
+      }
+    }
+  }
+
+  .tns-nav {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+
+    button {
+      width: 10px;
+      height: 10px;
+      @include ib;
+      margin: rem-calc(4);
+      border: 2px map-get($custom-palette, yellow) solid;
+      border-radius: 100px;
+      
+      &.tns-nav-active {
+        background: map-get($custom-palette, yellow);
+      }
+    }
+  }
+
+  &_show-dots {
+    .tns-nav {
+      display: block;
+    }
+  }
+
+  &_hide-auto {
+    button[data-action] {
+      display: none;
+    }
+  }
+
+  &_hide-btn {
+    .tns-controls {
+      display: none;
+    }
+  }
+
+  &_btm-gutter-1 {
+    padding-bottom: rem-calc(16);
+  }
+
+  &_btm-gutter-2 {
+    padding-bottom: rem-calc(32);
+  }
+}

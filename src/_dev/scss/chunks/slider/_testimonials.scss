@@ -1,0 +1,51 @@
+.testimonials-wrapper {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: auto;
+    width: 100%;
+    height: 100%;
+    background: rgba($black, .9);
+  }
+
+  .tns-controls {
+    display: none;
+
+    @include breakpoint(mobile up) {
+      display: block;
+    }
+  }
+
+  button[data-action] {
+    display: none;
+  }
+}
+
+.testimonials {
+  padding-bottom: rem-calc(32);
+
+  &__slide {
+    padding-right: map-get($section-gutters, medium);
+    padding-left: map-get($section-gutters, medium);
+    color: $white;
+    font-size: rem-calc(15);
+    font-weight: 400;
+
+    @include breakpoint(medium up) {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+
+  &__name {
+    font-size: rem-calc(18);
+    font-weight: 700;
+  }
+}

@@ -1,0 +1,22 @@
+.instagram {
+  padding-bottom: 0;
+
+  .slide-btn {
+    .tns-controls {
+      button[data-controls] {
+        border: 2px map-get($custom-palette, yellow) solid;
+        background: map-get($custom-palette, blue_dark);
+      }
+    }
+
+    .tns-nav {
+      display: none;
+      z-index: 10;
+      bottom: rem-calc(20);
+    }
+  }
+
+  button[data-action] {
+    display: none;
+  }
+}

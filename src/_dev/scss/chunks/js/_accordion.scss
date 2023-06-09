@@ -1,0 +1,62 @@
+.accordion {
+  &_mobile {
+    .accordion__title {
+      position: relative;
+
+      &::after {
+        content: '+';
+        position: absolute;
+        right: 0;
+        top: rem-calc(-4);
+        color: map-get($custom-palette, gray_500);
+        font-size: rem-calc(36);
+        font-weight: 500;
+        line-height: 1;
+        display: block;
+
+        @include breakpoint(mobile up) {
+          display: none;
+        }
+      }
+    }
+
+    .accordion__body {
+      display: none;
+
+      @include breakpoint(mobile up) {
+        display: block;
+      }
+    }
+  }
+
+  &__container {
+    &.open {
+      .contacts__title::after {
+        content: '-';
+      }
+
+      .accordion__body {
+        display: block;
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+
+    &::after {
+      content: '+';
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: map-get($custom-palette, gray_500);
+      font-size: rem-calc(36);
+      font-weight: 500;
+      line-height: 1;
+    }
+  }
+
+  &__body {
+    display: none;
+  }
+}

@@ -1,0 +1,66 @@
+$phone-indent-x: rem-calc(5);
+
+.phone {
+  transition: background $common-transition;
+  border: 2px map-get($custom-palette, yellow) solid;
+  border-radius: $btn-full-radius;
+
+  @include breakpoint(medium up) {
+    background: map-get($custom-palette, yellow);
+  }
+
+  &:hover {
+    background: darken(map-get($custom-palette, yellow), 15%);
+  }
+
+  &__body {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: rem-calc(15);
+    color: $white;
+    font-size: rem-calc(16);
+    font-weight: 600;
+
+    @include breakpoint(medium up) {
+      padding: rem-calc(15 12);
+    }
+
+    @include breakpoint(1080 up) {
+      padding: rem-calc(15 20);
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__ico {
+    width: 27px;
+    height: 27px;
+    margin-right: 0;
+    fill: $white;
+
+    @include breakpoint(medium up) {
+      margin-right: $phone-indent-x;
+    }
+  }
+
+  &__title {
+    display: none;
+    margin-right: $phone-indent-x;
+    text-transform: uppercase;
+
+    @include breakpoint(medium up) {
+      display: block;
+    }
+  }
+
+  &__content {
+    display: none;
+
+    @include breakpoint(medium up) {
+      display: block;
+    }
+  }
+}
