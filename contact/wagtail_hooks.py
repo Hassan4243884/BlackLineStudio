@@ -13,7 +13,7 @@ from wagtail.contrib.modeladmin.views import IndexView
 from .models import Form, History, Recipient
 
 from django.urls import path
-from wagtail.core import hooks
+from wagtail import hooks
 from django.shortcuts import get_object_or_404, redirect
 from django.template import engines
 from django.core.mail import EmailMessage

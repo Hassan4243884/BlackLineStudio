@@ -1,6 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import redirect
-
+from django.urls import resolve
 from contact import handle_form
 from .models import Form
 from .forms import ContactForm
@@ -9,7 +9,7 @@ from .forms import ContactForm
 def contact_form_middleware(get_response):
 
     def middleware(request):
-        if request.POST and 'contact_form' in request.POST:
+        if request.method == 'POST' and 'contact_form' in request.POST:
             error_data = []
             if request.POST.get('location') == 'Uptown':
                 form, success = handle_form('contact_form_uptown', request, ContactForm, error_data=error_data)

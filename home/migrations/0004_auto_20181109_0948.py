@@ -2,8 +2,8 @@
 
 from django.db import migrations
 import home.models
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 import wagtail.images.blocks
 
 
@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='homepage',
             name='body',
-            field=wagtail.core.fields.StreamField([('heading', wagtail.core.blocks.CharBlock(classname='full title')), ('paragraph', home.models.CustomRichTextBlock()), ('image', wagtail.images.blocks.ImageChooserBlock())]),
+            field=wagtail.fields.StreamField([('heading', wagtail.blocks.CharBlock(classname='full title')), ('paragraph', home.models.CustomRichTextBlock()), ('image', wagtail.images.blocks.ImageChooserBlock())]),
         ),
     ]

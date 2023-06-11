@@ -1,4 +1,4 @@
-from wagtail.core.blocks import (
+from wagtail.blocks import (
     FieldBlock, CharBlock, TextBlock, FloatBlock, DecimalBlock, RegexBlock,
     URLBlock, DateBlock, TimeBlock, DateTimeBlock, EmailBlock, IntegerBlock,
     RichTextBlock,

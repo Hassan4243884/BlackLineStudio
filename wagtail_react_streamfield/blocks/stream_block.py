@@ -1,4 +1,4 @@
-from wagtail.core.blocks import BaseStreamBlock, StreamValue
+from wagtail.blocks import BaseStreamBlock, StreamValue
 
 from ..exceptions import RemovedError
 

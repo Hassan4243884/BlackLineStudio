@@ -34,8 +34,8 @@ from django.utils.html import format_html_join
 from django.utils.safestring import mark_safe
 from wagtail.admin.rich_text.converters.editor_html import WhitelistRule
 from wagtail.admin.templatetags.wagtailadmin_tags import hook_output
-from wagtail.core import hooks
-from wagtail.core.whitelist import attribute_rule, allow_without_attributes
+from wagtail import hooks
+from wagtail.whitelist import attribute_rule, allow_without_attributes
 
 
 def to_js_primitive(string):

@@ -3,8 +3,8 @@
 from django.db import migrations
 import home.blocks
 import home.models
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 import wagtail.images.blocks
 
 
@@ -18,6 +18,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='homepage',
             name='body',
-            field=wagtail.core.fields.StreamField([('index_slider', wagtail.core.blocks.StructBlock([('logo', wagtail.images.blocks.ImageChooserBlock(required=True)), ('first_line', wagtail.core.blocks.CharBlock()), ('second_line', wagtail.core.blocks.CharBlock()), ('third_line', wagtail.core.blocks.CharBlock()), ('images', wagtail.core.blocks.ListBlock(wagtail.images.blocks.ImageChooserBlock(required=True))), ('cta_text', wagtail.core.blocks.CharBlock())])), ('heading', wagtail.core.blocks.CharBlock(classname='full title')), ('paragraph', home.models.CustomRichTextBlock()), ('image', wagtail.images.blocks.ImageChooserBlock()), ('content_section', wagtail.core.blocks.StructBlock([('left_part', wagtail.core.blocks.StreamBlock([('text_block', wagtail.core.blocks.StructBlock([('header', wagtail.core.blocks.CharBlock(required=False)), ('content', wagtail.core.blocks.StreamBlock([('rich_text', wagtail.core.blocks.RichTextBlock()), ('mobile_hidden_text', home.blocks.SpoilerMobileText())]))])), ('double_image_block', wagtail.core.blocks.StructBlock([('first_image', wagtail.images.blocks.ImageChooserBlock(required=True)), ('second_image', wagtail.images.blocks.ImageChooserBlock(required=True))]))])), ('right_part', wagtail.core.blocks.StreamBlock([('text_block', wagtail.core.blocks.StructBlock([('header', wagtail.core.blocks.CharBlock(required=False)), ('content', wagtail.core.blocks.StreamBlock([('rich_text', wagtail.core.blocks.RichTextBlock()), ('mobile_hidden_text', home.blocks.SpoilerMobileText())]))])), ('double_image_block', wagtail.core.blocks.StructBlock([('first_image', wagtail.images.blocks.ImageChooserBlock(required=True)), ('second_image', wagtail.images.blocks.ImageChooserBlock(required=True))]))]))]))]),
+            field=wagtail.fields.StreamField([('index_slider', wagtail.blocks.StructBlock([('logo', wagtail.images.blocks.ImageChooserBlock(required=True)), ('first_line', wagtail.blocks.CharBlock()), ('second_line', wagtail.blocks.CharBlock()), ('third_line', wagtail.blocks.CharBlock()), ('images', wagtail.blocks.ListBlock(wagtail.images.blocks.ImageChooserBlock(required=True))), ('cta_text', wagtail.blocks.CharBlock())])), ('heading', wagtail.blocks.CharBlock(classname='full title')), ('paragraph', home.models.CustomRichTextBlock()), ('image', wagtail.images.blocks.ImageChooserBlock()), ('content_section', wagtail.blocks.StructBlock([('left_part', wagtail.blocks.StreamBlock([('text_block', wagtail.blocks.StructBlock([('header', wagtail.blocks.CharBlock(required=False)), ('content', wagtail.blocks.StreamBlock([('rich_text', wagtail.blocks.RichTextBlock()), ('mobile_hidden_text', home.blocks.SpoilerMobileText())]))])), ('double_image_block', wagtail.blocks.StructBlock([('first_image', wagtail.images.blocks.ImageChooserBlock(required=True)), ('second_image', wagtail.images.blocks.ImageChooserBlock(required=True))]))])), ('right_part', wagtail.blocks.StreamBlock([('text_block', wagtail.blocks.StructBlock([('header', wagtail.blocks.CharBlock(required=False)), ('content', wagtail.blocks.StreamBlock([('rich_text', wagtail.blocks.RichTextBlock()), ('mobile_hidden_text', home.blocks.SpoilerMobileText())]))])), ('double_image_block', wagtail.blocks.StructBlock([('first_image', wagtail.images.blocks.ImageChooserBlock(required=True)), ('second_image', wagtail.images.blocks.ImageChooserBlock(required=True))]))]))]))]),
         ),
     ]

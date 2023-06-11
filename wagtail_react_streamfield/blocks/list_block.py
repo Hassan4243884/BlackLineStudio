@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.forms.utils import ErrorList
-from django.utils.translation import ugettext_lazy as _
-from wagtail.core.blocks import ListBlock, Block
+from django.utils.translation import gettext_lazy as _
+from wagtail.blocks import ListBlock, Block
 
 from ..exceptions import RemovedError
 

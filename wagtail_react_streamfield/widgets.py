@@ -4,7 +4,7 @@ from uuid import uuid4
 from django.core.serializers.json import DjangoJSONEncoder
 from django.forms import Media
 from django.utils.safestring import mark_safe
-from wagtail.core.blocks import (
+from wagtail.blocks import (
     BlockWidget, StructBlock, ListBlock, FieldBlock, RichTextBlock,
     StreamBlock,
 )

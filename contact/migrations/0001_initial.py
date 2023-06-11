@@ -2,7 +2,7 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
-import wagtail.core.fields
+import wagtail.fields
 
 
 class Migration(migrations.Migration):
@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
                 ('sender', models.EmailField(blank=True, max_length=255, null=True)),
                 ('sender_field', models.CharField(blank=True, max_length=128, null=True)),
                 ('email_subject', models.CharField(default='New Web Submission', max_length=255)),
-                ('email_text', wagtail.core.fields.RichTextField(blank=True, default='\n<p>Hello <strong>{{ user }}</strong>,</p>\n<p>Someone has submitted the contact form at <strong>{{ host }}</strong>:<br />\nThe request was submitted on <strong>{{ created|date }}</strong> at <strong>{{ created|time }}</strong>\nfrom the IP address of <strong>{{ ip }}</strong>.</p>\n<p>Request details:</p>\n<p>{{ data }}</p>\n<p>Truly yours,<br />\nMailer daemon @ <strong>{{ host }}</strong></p>', verbose_name='body')),
+                ('email_text', wagtail.fields.RichTextField(blank=True, default='\n<p>Hello <strong>{{ user }}</strong>,</p>\n<p>Someone has submitted the contact form at <strong>{{ host }}</strong>:<br />\nThe request was submitted on <strong>{{ created|date }}</strong> at <strong>{{ created|time }}</strong>\nfrom the IP address of <strong>{{ ip }}</strong>.</p>\n<p>Request details:</p>\n<p>{{ data }}</p>\n<p>Truly yours,<br />\nMailer daemon @ <strong>{{ host }}</strong></p>', verbose_name='body')),
             ],
             options={
                 'ordering': ('id',),

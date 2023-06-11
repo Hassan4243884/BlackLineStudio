@@ -2,8 +2,8 @@
 
 from django.db import migrations
 import home.models
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 import wagtail.images.blocks
 
 
@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='homepage',
             name='body',
-            field=wagtail.core.fields.StreamField([('index_slider', wagtail.core.blocks.StructBlock([('logo', wagtail.images.blocks.ImageChooserBlock(required=True)), ('first_line', wagtail.core.blocks.CharBlock()), ('second_line', wagtail.core.blocks.CharBlock()), ('third_line', wagtail.core.blocks.CharBlock()), ('images', wagtail.core.blocks.ListBlock(wagtail.images.blocks.ImageChooserBlock(required=True))), ('cta_text', wagtail.core.blocks.CharBlock())])), ('heading', wagtail.core.blocks.CharBlock(classname='full title')), ('paragraph', home.models.CustomRichTextBlock()), ('image', wagtail.images.blocks.ImageChooserBlock())]),
+            field=wagtail.fields.StreamField([('index_slider', wagtail.blocks.StructBlock([('logo', wagtail.images.blocks.ImageChooserBlock(required=True)), ('first_line', wagtail.blocks.CharBlock()), ('second_line', wagtail.blocks.CharBlock()), ('third_line', wagtail.blocks.CharBlock()), ('images', wagtail.blocks.ListBlock(wagtail.images.blocks.ImageChooserBlock(required=True))), ('cta_text', wagtail.blocks.CharBlock())])), ('heading', wagtail.blocks.CharBlock(classname='full title')), ('paragraph', home.models.CustomRichTextBlock()), ('image', wagtail.images.blocks.ImageChooserBlock())]),
         ),
     ]

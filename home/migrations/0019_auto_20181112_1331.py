@@ -2,8 +2,8 @@
 
 from django.db import migrations
 import home.blocks
-import wagtail.core.blocks
-import wagtail.core.fields
+import wagtail.blocks
+import wagtail.fields
 import wagtail.images.blocks
 
 
@@ -17,6 +17,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='teampage',
             name='body',
-            field=wagtail.core.fields.StreamField([('team_member_block', wagtail.core.blocks.StructBlock([('background', wagtail.images.blocks.ImageChooserBlock()), ('header', wagtail.core.blocks.CharBlock(required=True)), ('name', wagtail.core.blocks.CharBlock(required=True)), ('photo', wagtail.images.blocks.ImageChooserBlock()), ('job_title', wagtail.core.blocks.CharBlock(required=True)), ('content', wagtail.core.blocks.RichTextBlock())])), ('cta_block', wagtail.core.blocks.StructBlock([('header', wagtail.core.blocks.CharBlock(default='Let Us Bring Your Vision to Life!', required=True)), ('form_cta_text', wagtail.core.blocks.CharBlock(default='Book a free consultation', required=True)), ('phone_cta_text', wagtail.core.blocks.CharBlock(default='Speak with an artist:', required=True)), ('phone_cta_number', wagtail.core.blocks.CharBlock(required=True))])), ('instagram_block', home.blocks.InstagramBlock()), ('testimonials_block', wagtail.core.blocks.StructBlock([('header', wagtail.core.blocks.CharBlock(required=True)), ('testimonials', wagtail.core.blocks.ListBlock(home.blocks.TestimonialBlock))])), ('large_gallery_block', wagtail.core.blocks.StructBlock([('header', wagtail.core.blocks.CharBlock(required=False)), ('images', wagtail.core.blocks.ListBlock(wagtail.images.blocks.ImageChooserBlock(required=True)))]))]),
+            field=wagtail.fields.StreamField([('team_member_block', wagtail.blocks.StructBlock([('background', wagtail.images.blocks.ImageChooserBlock()), ('header', wagtail.blocks.CharBlock(required=True)), ('name', wagtail.blocks.CharBlock(required=True)), ('photo', wagtail.images.blocks.ImageChooserBlock()), ('job_title', wagtail.blocks.CharBlock(required=True)), ('content', wagtail.blocks.RichTextBlock())])), ('cta_block', wagtail.blocks.StructBlock([('header', wagtail.blocks.CharBlock(default='Let Us Bring Your Vision to Life!', required=True)), ('form_cta_text', wagtail.blocks.CharBlock(default='Book a free consultation', required=True)), ('phone_cta_text', wagtail.blocks.CharBlock(default='Speak with an artist:', required=True)), ('phone_cta_number', wagtail.blocks.CharBlock(required=True))])), ('instagram_block', home.blocks.InstagramBlock()), ('testimonials_block', wagtail.blocks.StructBlock([('header', wagtail.blocks.CharBlock(required=True)), ('testimonials', wagtail.blocks.ListBlock(home.blocks.TestimonialBlock))])), ('large_gallery_block', wagtail.blocks.StructBlock([('header', wagtail.blocks.CharBlock(required=False)), ('images', wagtail.blocks.ListBlock(wagtail.images.blocks.ImageChooserBlock(required=True)))]))]),
         ),
     ]

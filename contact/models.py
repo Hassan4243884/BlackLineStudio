@@ -12,7 +12,7 @@ from django.core.mail import EmailMessage, mail_admins
 import os
 
 from requests import Response
-from wagtail.core.fields import RichTextField
+from wagtail.fields import RichTextField
 
 from cleantalk.cleantalk import CleanTalk
 

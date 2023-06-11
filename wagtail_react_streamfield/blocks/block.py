@@ -1,5 +1,5 @@
 from django.utils.text import capfirst
-from wagtail.core.blocks import Block
+from wagtail.blocks import Block
 
 from wagtail_react_streamfield.exceptions import RemovedError
 

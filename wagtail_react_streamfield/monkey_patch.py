@@ -1,5 +1,5 @@
 from django.utils.six import wraps
-from wagtail.core.blocks import (
+from wagtail.blocks import (
     BlockField, Block, BaseStreamBlock, ListBlock, BaseStructBlock, FieldBlock,
 )
 
@@ -30,10 +30,10 @@ def _patch_with(original_class, new_class, *method_names):
 
 
 def _patch_streamfield_panel():
-    from wagtail.admin.edit_handlers import StreamFieldPanel
-    from .edit_handlers import NewStreamFieldPanel
+    from wagtail.admin.panels import FieldPanel
+    from .edit_handlers import NewFieldPanel
 
-    _patch_with(StreamFieldPanel, NewStreamFieldPanel, 'html_declarations')
+    _patch_with(FieldPanel, NewFieldPanel, 'html_declarations')
 
 
 def _patch_block_widget():

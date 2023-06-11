@@ -9,7 +9,7 @@ import django.db.migrations.operations.special
 import django.db.models.deletion
 import modelcluster.contrib.taggit
 import modelcluster.fields
-import wagtail.core.fields
+import wagtail.fields
 
 
 # Functions from the following migrations need manual copying.
@@ -70,7 +70,7 @@ class Migration(migrations.Migration):
             name='BlogPage',
             fields=[
                 ('page_ptr', models.OneToOneField(auto_created=True, on_delete=django.db.models.deletion.CASCADE, parent_link=True, primary_key=True, serialize=False, to='wagtailcore.Page')),
-                ('body', wagtail.core.fields.RichTextField()),
+                ('body', wagtail.fields.RichTextField()),
                 ('header_image', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='+', to='wagtailimages.Image')),
             ],
             options={
@@ -139,7 +139,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='blogpage',
             name='body',
-            field=wagtail.core.fields.RichTextField(verbose_name='body'),
+            field=wagtail.fields.RichTextField(verbose_name='body'),
         ),
         migrations.AlterField(
             model_name='blogpage',
@@ -178,6 +178,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='blogpage',
             name='body',
-            field=wagtail.core.fields.RichTextField(blank=True, verbose_name='body'),
+            field=wagtail.fields.RichTextField(blank=True, verbose_name='body'),
         ),
     ]

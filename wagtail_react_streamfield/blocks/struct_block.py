@@ -1,4 +1,4 @@
-from wagtail.core.blocks import BaseStructBlock, Block
+from wagtail.blocks import BaseStructBlock, Block
 
 from ..exceptions import RemovedError
 

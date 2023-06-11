@@ -1,6 +1,6 @@
-from wagtail.admin.edit_handlers import StreamFieldPanel
+from wagtail.admin.panels import FieldPanel
 
 
-class NewStreamFieldPanel(StreamFieldPanel):
+class NewFieldPanel(FieldPanel):
     def html_declarations(self):
         return ''

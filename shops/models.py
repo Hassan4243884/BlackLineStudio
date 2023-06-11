@@ -1,23 +1,23 @@
 from django.db import models
 
-from wagtail.core.models import Page
-from wagtail.core.fields import StreamField, RichTextField
-from wagtail.core import blocks
+from wagtail.models import Page
+from wagtail.fields import StreamField, RichTextField
+from wagtail import blocks
 from wagtail.images import get_image_model_string
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.admin.panels import FieldPanel
 from wagtailmetadata.models import MetadataPageMixin
 from home.blocks import DynamicContentSection, GridContainer
-from wagtail.images.edit_handlers import ImageChooserPanel
+
 
 
 class ContactPage(MetadataPageMixin, Page):
     body = StreamField([
         ('grid_container', GridContainer()),
-    ])
+    ], use_json_field=True)
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body'),
+        FieldPanel('body'),
     ]
 
     subpage_types = ['shops.OfficePage']
@@ -47,7 +47,7 @@ class OfficePage(MetadataPageMixin, Page):
     body = RichTextField()
     additional_body = StreamField([
         ('dynamic_section', DynamicContentSection()),
-    ], blank=True, null=True)
+    ], blank=True, null=True, use_json_field=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('header'),
@@ -57,10 +57,10 @@ class OfficePage(MetadataPageMixin, Page):
         FieldPanel('email'),
         FieldPanel('phone'),
         FieldPanel('working_hours'),
-        ImageChooserPanel('image'),
+        FieldPanel('image'),
         FieldPanel('body'),
         FieldPanel('location_coordinates'),
-        StreamFieldPanel('additional_body'),
+        FieldPanel('additional_body'),
     ]
 
     subpage_types = []

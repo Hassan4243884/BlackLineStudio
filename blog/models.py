@@ -6,12 +6,12 @@ from django.db import models
 from django.db.models import Count, Q
 from django.shortcuts import get_object_or_404
 from django.template.defaultfilters import slugify
-from django.utils.translation import ugettext_lazy as _
-from wagtail.core.fields import RichTextField
-from wagtail.core.models import Page
-from wagtail.admin.edit_handlers import (
+from django.utils.translation import gettext_lazy as _
+from wagtail.fields import RichTextField
+from wagtail.models import Page
+from wagtail.admin.panels import (
     FieldPanel, InlinePanel, MultiFieldPanel, FieldRowPanel)
-from wagtail.images.edit_handlers import ImageChooserPanel
+
 from wagtail.images import get_image_model_string
 from wagtail.snippets.models import register_snippet
 from wagtail.search import index
@@ -272,6 +272,6 @@ BlogPage.content_panels = [
         FieldPanel('tags'),
         InlinePanel('categories', label=_("Categories")),
     ], heading="Tags and Categories"),
-    ImageChooserPanel('header_image'),
+    FieldPanel('header_image'),
     FieldPanel('body', classname="full"),
 ]

@@ -1,10 +1,10 @@
 from django.db import models
 
-from wagtail.core.models import Page
-from wagtail.core.fields import StreamField
-from wagtail.core import blocks
+from wagtail.models import Page
+from wagtail.fields import StreamField
+from wagtail import blocks
 from wagtail.images.blocks import ImageChooserBlock
-from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
+from wagtail.admin.panels import FieldPanel
 from wagtailmetadata.models import MetadataPageMixin
 from .blocks import IndexSliderBlock, ContentSection, GalleryBlock, SimplePageHeader, ServicesBlock, CountersBlock, \
     ArtistGalleryBlock, CTABlock, InstagramBlock, TestimonialsBlock, ServicesPageBlock, ChildPagesMenu, \
@@ -37,10 +37,10 @@ class HomePage(MetadataPageMixin, Page):
         ('mobile_block', MobileContentSection()),
         ('tabbed_content', TabbedContent()),
         ('text', SpoilerTextBlock()),
-    ])
+    ], use_json_field=True)
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body'),
+        FieldPanel('body'),
     ]
 
     class Meta:
@@ -80,12 +80,12 @@ class ServicePage(MetadataPageMixin, Page):
         ('dynamic_section', DynamicContentSection()),
         ('mobile_block', MobileContentSection()),
         ('tabbed_content', TabbedContent()),
-    ])
+    ], use_json_field=True)
 
     content_panels = Page.content_panels + [
         FieldPanel('menu_icon'),
         FieldPanel('short_description'),
-        StreamFieldPanel('body'),
+        FieldPanel('body'),
     ]
 
     class Meta:
@@ -101,10 +101,10 @@ class TeamPage(MetadataPageMixin, Page):
         ('testimonials_block', TestimonialsBlock()),
         ('large_gallery_block', LargeGalleryBlock()),
         ('tabbed_content', TabbedContent()),
-    ])
+    ], use_json_field=True)
 
     content_panels = Page.content_panels + [
-        StreamFieldPanel('body'),
+        FieldPanel('body'),
     ]
 
     class Meta:
